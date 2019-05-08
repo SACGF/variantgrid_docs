@@ -15,17 +15,17 @@ An active test is the most recent confirmed version of a pathology test.
 ![Active test logo](images/test_tube_active.png)
 ![All other versions of tests](images/test_tube_obsolete.png)
 
-The curator confirms & adds a time-stamp by clicking the **Confirm Test** button. A test cannot be un-confirmed.
+The curator confirms & adds a time-stamp by clicking the **Confirm Test** button. Once a test has been confirmed it cannot be modified, and any further changes must create a new test version.
 
 ## Requesting gene changes
 
-Only the curator can modify a test (though everyone can edit the wiki). You need to contact an administrator to change curator for a test.
+Only the curator can modify a test, everyone else can make modification request but these must be approved by the curator. Contact an administrator to change curator for a test.
 
-You cannot directly add / remove genes - but instead must make a gene modification request on the [GeneGrid](../genes/genegrid.md) page.
+Make gene modification requests on the [GeneGrid](../genes/genegrid.md) page.
 
 ![](images/request_gene_addition.png)
 
-The gene symbols in the pathology test column are always what is in the test. The +/- 1 (with background colors) in the image above are counts of requested additions/removals for that gene.
+The gene symbols in the pathology test column are always what is in the test. The +/- numbers (green background for add, blue for delete) in the image above are counts of requested additions/removals for that gene.
 
 _To request a gene addition:_ Add genes to the [GeneGrid](../genes/genegrid.md), then click on an empty space where the gene should be.
 _To request a gene deletion:_ Click on an existing gene, then the red delete symbol which appears.
@@ -38,12 +38,8 @@ The curator can see any pending requests on the pathology test version page, whe
 
 ![](images/modifications.png)
 
-Only unconfirmed tests can be modified. If a test has been confirmed - changes create a new test version. This is not yet confirmed, so won't become/change the currently active test.
-
 Any genes added will have the user, date and brief justification comment from the addition request stored on the "Modification info column" which you can see on the grid of genes for a pathology test version.
 
 The outcomes for any processed requests can be seen by all users at the bottom of the page:
 
 ![](images/request_outcomes.png)
-
-

@@ -2,11 +2,11 @@
 
 Menu: **[patients]**
 
-Creating patient records can be useful to store phenotype information and link multiple samples together (eg tumor/normal of the same patient)
+Create patients to store phenotype information and link multiple samples (eg tumor/normal) together.
 
 ## Searching
 
-You can search by name or code.
+You can search by name, code or free text in the phenotype description.
 
 Click the graph of phenotype terms to filter the grid to patients with that [phenotype](phenotypes.md).
 
@@ -14,7 +14,7 @@ Click the graph of phenotype terms to filter the grid to patients with that [phe
 
 ## Patient records
 
-You can import a CSV to setup a lot of patients at once. Click the **patient record imports** link at the top of the page, then can select to download an example CSV with your samples pre-filled, so it's easy to match your patients to your existing data.
+Import a CSV to create patients in bulk. Click the **patient record imports** link at the top of the page, then can select to download an example CSV with your samples pre-filled, so it's easy to match your patients to your existing data.
 
 You can also create patients one at time via a form, by clicking the **Create New Patient** link just above the grid.
 
@@ -22,7 +22,7 @@ You can also create patients one at time via a form, by clicking the **Create Ne
 
 Patients can be created via the patholoy test ordering system.
 
-When running in a diagnostic lab intranet, patient records can be automatically created via your LIMS/Patient records system (speak to your administrator)
+On a private server (eg diagnostic lab intranet), patient records can be automatically created via your LIMS/Patient records system (speak to your administrator)
 
 ## Other
 

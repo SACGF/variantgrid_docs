@@ -14,7 +14,7 @@ Once you have finished adding/removing samples, click save. This processes the c
 
 ### Create from a larger cohort
 
-You can create a smaller cohort from a larger one. Select at least 2 samples then click the **Create cohort from selected samples** button. Selecting exactly 3 samples allows you to create a [Trio](trios.md) which allows for simpler analyses.
+You can create a smaller cohort from a larger one. Select at least 2 samples then click the **[Create cohort from selected samples]** button. Selecting exactly 3 samples allows you to create a [Trio](trios.md) which allows for simpler analyses.
 
 ![Creating a sub-cohort](../data/images/multi_sample_vcf.png)
 
@@ -31,4 +31,3 @@ There are some other analyses you can perform from the cohort/VCF page, eg:
 ![Gene/Sample Matrix](images/cohort_matrix.png)
 
 ![Cohort Hotspots graph](images/cohort_hotspots.png)
-

@@ -15,7 +15,7 @@ Or, you can type plain text and we'll automatically match your words to Human Ph
 
 Matched terms will be highlighted to the right of the description box.
 
-![Patients grid filtered to microcephaly](images/patients_graphs_selected.png)
+![Patients grid filtered to microcephaly](images/patient_phenotypes.png)
 
 ### How phenotype term matching works
 
@@ -53,10 +53,12 @@ This allows us to find the biggest matches first. If a match occurs, the unmatch
 
 Some filtering is done to avoid matching to common words and terms. For instance "Trio" is a gene name, but we will not match it as a gene if the sentence also contains the name of a enrichment_kit or one of the words: "exome", "WES", "father" or "mother".
 
-Matching occurs first against Human Phenotype Ontology terms and synonyms, and OMIM terms and aliases.
+Matching occurs first against [Human Phenotype Ontology](https://hpo.jax.org/app/) terms and synonyms, and [OMIM](https://www.omim.org/) terms and aliases.
 
 If no exact match is found, we try again using mismatches - 1 mismatch (including insertions/deletions) is allowed for two or more words.
 
 For single words, we only allow mismatches if the word is more than 5 letters long and made entirely of letters (ie no digits or symbols).
 
-Single words are then matched to gene names. Sometimes there will be multiple matches, eg "PKD1" will map to both the OMIM term PKD1 (POLYCYSTIC KIDNEY DISEASE 1) and the gene PKD1. This is usually what people want as the gene is associated with the disorder. 
+Single words are then matched (exact with no mismatches) to gene names.
+
+Sometimes there will be multiple matches, eg "PKD1" will map to both the OMIM term PKD1 (POLYCYSTIC KIDNEY DISEASE 1) and the gene PKD1. This is usually what people want as the gene is associated with the disorder. 
