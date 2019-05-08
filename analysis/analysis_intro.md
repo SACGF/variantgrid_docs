@@ -14,21 +14,21 @@ These variants are then filtered to those that are less than 1% of the populatio
 
 ![Connecting Nodes](images/vg_connect_steps.png)
 
-To add a node, select the node type from the drop down menu in the top left of the screen and click the add node button
+To add a node, select the node type from the drop down menu in the top left of the screen and click the ![add button](../images/icons/add-icon.png)
 
-![Add node](images/add_sample_node.png)
+![](images/add_sample_node.png)
 
-Click and drag a node to move it around. You can select multiple nodes by dragging a box around them. This allows you to copy, delete or move them as a group. To delete a node, select it then press DEL key, or click the delete node icon.
+Click and drag a node to move it around. You can select multiple nodes by drag-selecting a box around them. This allows you to copy, delete or move them as a group. Delete selected nodes by pressing DELETE, or click the ![delete button](../images/icons/delete-icon.png).
 
 ## Analysis screen
 
-![Add node](images/vg_analysis_overview.png)
+![](images/vg_analysis_overview.png)
 
 The screenshot above shows the VariantGrid analysis screen. The node graph is on the left part of the screen, showing the user built filters.
 
-Click a node to select it. This loads the node configuration editor (top right) and a [grid of the variants](analysis_grid.md) in the node (bottom right).
+Click a node to select it. This loads the [node editor](node_editors.md) (top right) and a [grid of the variants](analysis_grid.md) in the node (bottom right).
 
-Clicking on the node loads this editor window. The editor is different depending on the node.
+Clicking on the node loads this editor window. The [node editor](node_editors.md) is different depending on the type of node.
 
 ### Column Summary
 
