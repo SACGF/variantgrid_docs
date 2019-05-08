@@ -2,11 +2,13 @@
 
 Menu: **[genes]**
 
+## Creating Gene Lists
+
+Ways to create a gene list include:
+
 * Upload a text file (see [upload](../data/upload.md))
 * Create via [GeneGrid](genegrid.md)
-* Creating manually (see below)
-
-## Creating Gene Lists
+* Creating manually (see screenshot below)
 
 ![Click on New GeneList](images/gene_list_create.png)
 
@@ -14,12 +16,10 @@ Menu: **[genes]**
 
 ## Using gene lists in analyses
 
-
-![](images/gene_list_example.png)
-
 To quickly filter to a gene list in an [analysis](../analysis/analysis_intro.md)
 
-* Add and connect a gene list node
-* Select "Custom Gene List" in the top right node editor
-* Enter the genes into the text box and click "Save" 
+1. Add and connect a gene list node
+2. Select "Custom Gene List" in the top right node editor
+3. Enter the genes into the text box and click "Save" 
 
+![](images/gene_list_example.png)

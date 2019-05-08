@@ -7,6 +7,7 @@ Enter text into the search box in the top right hand corner and press enter or c
 Accepted inputs:
 
 | Name | Example |
+| ---- | -------:|
 | Locus | chr1:169519049 |
 | Variant | 1:169519049 T>C |
 | ClinGenAllele | CA285410130 |
@@ -17,6 +18,3 @@ Accepted inputs:
 | Flowcell | 160513_NB501009_0029_AH3FFJBGXY |
 
 We support 'c.', 'n.' and '.p', see [HGVS](../variants/hgvs.md) for more details.
-
-
-

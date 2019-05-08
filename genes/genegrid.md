@@ -1,8 +1,8 @@
 # Gene Grid
 
-Men: **[genes] -> [gene grid]**
+Menu: **[genes] -> [gene grid]**
 
-GeneGrid allows comparison between many different gene lists and quickly adding/removing genes. Genes are rows and gene lists are columns.
+GeneGrid allows quick comparisons between gene lists and adding/removing genes from them. Genes are rows and gene lists are columns.
 
 ![](images/genegrid.png)
 

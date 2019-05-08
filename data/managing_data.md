@@ -14,7 +14,7 @@ Click the link on the grid to view the file details page.
 
 # Sharing data
 
-Users belong to groups (see your [user_settings](user settings page)) that can share data. Ticking the **Show Group Data** checkbox will show this on a grid.
+Users belong to groups (see [user settings](../settings/user_settings.md)) that can share data. Ticking the **Show Group Data** checkbox will show this on a grid.
 
 By default, you automatically share data (read-only) with your group.
 

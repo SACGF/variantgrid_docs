@@ -26,6 +26,7 @@ Welcome to VariantGrid's documentation!
    data/vcf_samples
    genes/gene_lists
    genes/genegrid
+   genes/gene_page
    genes/gene_coverage
    pathtests/pathtests
    pathtests/test_ordering
@@ -35,6 +36,7 @@ Welcome to VariantGrid's documentation!
    patients/trios
    sequencing/sequencing_runs
    sequencing/sequencing_details
+   sequencing/gold_standard_runs
    variants/hgvs
    variants/normalization
    settings/igv_integration

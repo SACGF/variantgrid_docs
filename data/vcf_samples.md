@@ -10,22 +10,25 @@ You must use bam files, to re-call the genotypes for each position.
 
 Consider 3 VCF files:
 
-Proband 	Mum 	Dad
-HET 	(not present) 	(not present)
+| Proband | Mum | Dad |
+| ------- |:---:| ---:|
+| HET | (not present) | (not present) |
 
-There's no way to tell in a VCF if a variant not being present is due to the sample having the reference allele at that position or no coverage.
+There's no way to tell if a variant not being present in a single sample VCF is due to having the reference allele or no coverage.
 
 Merging just the VCFs (without supplying the bams) will give the genotypes of:
 
-Proband 	Mum 	Dad
-HET 	./.	./.
+| Proband | Mum | Dad |
+| ------- |:---:| ---:|
+| HET | ./. | ./. |
 
-If you merge them using GATK/Picard using bam files - the caller will re-examine the reads over the locus, and make the genotype call.
+If you merge them using [GATK](https://software.broadinstitute.org/gatk/)/[Picard](https://broadinstitute.github.io/picard/) using bam files - the caller will re-examine the reads over the locus, and make the genotype call.
 
 Thus, if both parents had reference bases, the calls would be:
 
-Proband 	Mum 	Dad
-0/1 (HET) 	0/0 (HOM_REF)	0/0 (HOM_REF)
+| Proband | Mum | Dad |
+| ------- |:---:| ---:|
+| 0/1 (HET) | 0/0 (HOM_REF) | 0/0 (HOM_REF) |
 
 And you can be confident that it is a denovo variant, rather than just lacking coverage in one of the parent samples.
 
