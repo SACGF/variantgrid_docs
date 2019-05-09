@@ -26,11 +26,15 @@ Click and drag a node to move it around. You can select multiple nodes by drag-s
 
 The screenshot above shows the VariantGrid analysis screen. The node graph is on the left part of the screen, showing the user built filters.
 
-Click a node to select it. This loads the [node editor](node_editors.md) (top right) and a [grid of the variants](analysis_grid.md) in the node (bottom right).
+Click a node to select it. This loads the node editor (top right) and a grid of the variants (see section below) in the node (bottom right).
 
-Clicking on the node loads this editor window. The [node editor](node_editors.md) is different depending on the type of node.
+Clicking on the node loads this editor window. The node editor is different depending on the [type of node](nodes.md).
 
-### Column Summary
+## Analysis Grid
+
+The 1st column (ID) is special and contains a check box, a numbered link and an IGV logo. The check box is used to select rows manually. The link loads detailed information about that variant above the grid. The IGV link will view the locus in IGV (loading bam files associated with samples). See IGV Integration page. Clicking on a row highlights it. Select the "tagging" tab, then click on a label to tag/colour the row.
+
+## Column Summary
 
 ![Node Summary](images/node_summary.png)
 

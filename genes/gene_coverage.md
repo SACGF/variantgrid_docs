@@ -22,5 +22,5 @@ Sample QC coverage loaded via [sequencing features](../sequencing/sequencing_run
 
 ## GeneGrid EnrichmentKit coverage
 
-The per-gene QC metrics for an EnrichmentKit on the GeneGrid page are from [Gold Standard Runs](../sequencing/gold_standard_runs.md), using the canonical transcripts for that EnrichmentKit.
+The per-gene QC metrics for an EnrichmentKit on the GeneGrid page are from [Gold Standard Runs](../sequencing/sequencing_runs.md), using the canonical transcripts for that EnrichmentKit.
 

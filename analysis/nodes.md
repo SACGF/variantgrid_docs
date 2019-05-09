@@ -21,7 +21,6 @@ A collection of related samples, eg "control group" or "poor responders"
 ![](images/nodes/node_classifications.png "Classifications")
 
 
-
 ### Pedigree
 
 ![](images/nodes/node_pedigree.png "Pedigree")
@@ -91,6 +90,8 @@ Filter to gene lists based on ontology keywords
 ![](images/nodes/node_population.png "Population")
 
 Filter on population frequencies in public databases (gnomAD/Exac/1KG/UK10K) or number of samples in this database.
+
+![](images/node_editors/population_node_gnomad_population.png)
 
 ### Tags
 

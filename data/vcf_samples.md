@@ -1,5 +1,20 @@
 # VCF / Samples
 
+### VCF import
+
+Variants are [normalized](../variants/normalization.md) upon import. We only import variants, filters and genotypes (we don't use INFO as we do our own annotations)
+
+The VCF format can vary a lot, we have tested VCFs from the following variant callers:   
+
+* GATK
+* FreeBayes
+
+Each sample is assigned a "variants type" of _Unknown_, _Germline_, _Mixed_ (single sample) or _Somatic only_ (tumor minus normal).
+
+This is determined by looking at the "source" entry in the VCF header, and matching it to an entry in **VCFSource** object (setup by your administrator)
+
+Samples with variants type of_somatic only_  are checked for [mutational signatures](mutational_signatures.md)  
+
 ### Multi-sample VCFs
 
 Multi-sample VCF files combined using bam files record the genotype for all samples at each variant position.
@@ -31,4 +46,3 @@ Thus, if both parents had reference bases, the calls would be:
 | 0/1 (HET) | 0/0 (HOM_REF) | 0/0 (HOM_REF) |
 
 And you can be confident that it is a denovo variant, rather than just lacking coverage in one of the parent samples.
-

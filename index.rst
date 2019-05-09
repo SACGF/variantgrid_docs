@@ -3,44 +3,42 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to VariantGrid's documentation!
-=======================================
+VariantGrid documentation
+=========================
+
+VariantGrid is an open source variant database and web application for analyzing genetic data.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   quickstart
-   analysis/analysis_intro
-   analysis/analysis_grid
-   analysis/karyomapping
-   analysis/nodes
-   analysis/node_editors
-   analysis/tagging
-   annotation/annotation_details
-   annotation/versions
-   classification/creating_classification
-   data/search
+   intro
    data/upload
    data/managing_data
-   data/vcf_samples
+   analysis/analysis_intro
+   analysis/nodes
+   analysis/tagging
+   classification/variant_classification
+   patients/patients
+   patients/phenotypes
+   patients/cohorts
+   patients/trios
+   genes/gene_page
    genes/gene_lists
    genes/genegrid
-   genes/gene_page
    genes/gene_coverage
    pathtests/pathtests
    pathtests/test_ordering
-   patients/cohorts
-   patients/patients
-   patients/phenotypes
-   patients/trios
    sequencing/sequencing_runs
-   sequencing/sequencing_details
-   sequencing/gold_standard_runs
-   variants/hgvs
+   annotation/annotation_details
+   annotation/versions
+   data/somatic_allele_frequency
+   data/mutational_signatures
+   analysis/karyomapping
+   data/vcf_samples
    variants/normalization
-   settings/igv_integration
    settings/user_settings
+   settings/igv_integration
 
 
 Indices and tables
