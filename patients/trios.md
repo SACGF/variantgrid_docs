@@ -45,3 +45,5 @@ The C. Het node in the bottom right of the screenshot above is a filter node - i
 This is because you probably don't want every gene with >=2 variants, but rather only >=2 damaging/rare ones. Adjust the filters above the C.Het node to adjust this.
 
 Modify the analysis as per instructions below to filter to all of them.
+
+![](images/all_comp_het.png)
