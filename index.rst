@@ -10,35 +10,80 @@ VariantGrid is an open source variant database and web application for analyzing
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Overview:
 
    intro
-   data/upload
-   data/managing_data
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Analysis:
+
    analysis/analysis_intro
    analysis/nodes
    analysis/tagging
-   classification/variant_classification
-   patients/patients
-   patients/phenotypes
-   patients/cohorts
-   patients/trios
+   analysis/karyomapping
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Annotations:
+
+   annotation/annotation_details
+   annotation/versions
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Data:
+
+   data/upload
+   data/managing_data
+   data/somatic_allele_frequency
+   data/mutational_signatures
+   data/vcf_samples
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Genes:
+
    genes/gene_page
    genes/gene_lists
    genes/genegrid
    genes/gene_coverage
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Path Tests:
+
    pathtests/pathtests
    pathtests/test_ordering
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Patients:
+
+   patients/patients
+   patients/phenotypes
+   patients/cohorts
+   patients/trios
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Sequencing:
+
    sequencing/sequencing_runs
-   annotation/annotation_details
-   annotation/versions
-   data/somatic_allele_frequency
-   data/mutational_signatures
-   analysis/karyomapping
-   data/vcf_samples
-   variants/normalization
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Settings:
+
    settings/user_settings
    settings/igv_integration
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Variant Classification:
+
+   classification/variant_classification
+   variants/normalization
 
 
 Indices and tables
