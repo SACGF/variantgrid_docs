@@ -16,7 +16,7 @@ Variants created from the external API are not auto-populated with values from a
 
 ## Editing
 
-Filter bar
+See the [Classification Form](variant_classification_form).
 
 ## Configuring Fields
 
