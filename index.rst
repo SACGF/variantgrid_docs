@@ -20,7 +20,9 @@ VariantGrid is an open source variant database and web application for analyzing
 
    analysis/analysis_intro
    analysis/nodes
+   analysis/analysis_advanced
    analysis/tagging
+   analysis/analysis_classification
    analysis/karyomapping
 
 .. toctree::
@@ -28,7 +30,8 @@ VariantGrid is an open source variant database and web application for analyzing
    :caption: Annotations:
 
    annotation/annotation_details
-   annotation/versions
+   annotation/variant_details
+   annotation/representative_transcript
 
 .. toctree::
    :maxdepth: 2
@@ -39,6 +42,7 @@ VariantGrid is an open source variant database and web application for analyzing
    data/somatic_allele_frequency
    data/mutational_signatures
    data/vcf_samples
+   data/search
 
 .. toctree::
    :maxdepth: 2
@@ -76,6 +80,7 @@ VariantGrid is an open source variant database and web application for analyzing
    :caption: Settings:
 
    settings/user_settings
+   settings/columns
    settings/igv_integration
 
 .. toctree::
@@ -84,6 +89,7 @@ VariantGrid is an open source variant database and web application for analyzing
 
    classification/variant_classification
    classification/variant_classification_form
+   classification/classification_flags
    classification/variant_classification_report
    classification/variant_classification_redcap
    variants/normalization

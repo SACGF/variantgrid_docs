@@ -2,15 +2,13 @@
 
 ## Creating Classifications
 
-* From analysis
-* From classification page
-* From variant details page
+* From an analysis (see [analysis classification workflow](../analysis/analysis_classification.md))
+* From the [variant details page](../annotation/variant_details.md)
+* Via API (See [Shariant API docs](https://shariant.readthedocs.io/en/latest/integration/api/classification_post.html))
 
 ## Autopopulation
 
 When you create a classification from inside the system, a number of fields are auto-populated from annotation and sample information.
-
-## API
 
 Variants created from the external API are not auto-populated with values from annotation. 
 
