@@ -33,24 +33,3 @@ Clicking on the node loads this editor window. The node editor is different depe
 ## Analysis Grid
 
 The 1st column (ID) is special and contains a check box, a numbered link and an IGV logo. The check box is used to select rows manually. The link loads detailed information about that variant above the grid. The IGV link will view the locus in IGV (loading bam files associated with samples). See IGV Integration page. Clicking on a row highlights it. Select the "tagging" tab, then click on a label to tag/colour the row.
-
-## Analysis settings
-
-TODO
-
-## Node counts
-
-TODO
-
-## Column Summary
-
-![Node Summary](images/node_summary.png)
-
-The second tab (Summary) is used to view what values are in a column. Qualitative data is counted and shown in a grid, such as snpEFF Effect in the screenshot below:
-
-Clicking on the link in the 1st column creates a child node filtering to that value. This is useful for getting an overview then drilling down into your data.
-
-The screenshot shows 396 entries under "frameshift variant", and the filter node created underneath the current (red bordered) node, which is configured to filter to snpeff_effect = frameshift variant, and also has 396 variants after filtering.
-
-Quantative data (numbers, such as for the af_1kg column (1000 Genomes Alt Frequency)) is shown as a box-plot.
-
