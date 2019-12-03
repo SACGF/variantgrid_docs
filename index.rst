@@ -13,6 +13,7 @@ VariantGrid is an open source variant database and web application for analyzing
    :caption: Overview:
 
    intro
+   attributions
 
 .. toctree::
    :maxdepth: 2
