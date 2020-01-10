@@ -2,7 +2,7 @@
 
 ### VCF import
 
-Variants are [normalized](../variants/normalization.md) upon import. We only import variants, filters and genotypes (we don't use INFO as we do our own annotations)
+Variants are normalized (see below) upon import. We only import variants, filters and genotypes (we don't use INFO as we do our own annotations)
 
 The VCF format can vary a lot, we have tested VCFs from the following variant callers:   
 
@@ -46,3 +46,12 @@ Thus, if both parents had reference bases, the calls would be:
 | 0/1 (HET) | 0/0 (HOM_REF) | 0/0 (HOM_REF) |
 
 And you can be confident that it is a denovo variant, rather than just lacking coverage in one of the parent samples.
+
+### VCF Normalization
+
+We [Decompose and Normalise variants using VT](https://genome.sph.umich.edu/wiki/Vt#Normalization) during import, so variants from different VCF files have a consistent representation.
+
+If any variants were altered during an import, a warning appears on the VCF and Sample pages, allowing you to examine the changes. 
+
+You can [search](search.md) on an unnormalized variant, and it will take you to the normalized [variant's details page](../annotation/variant_details.md).
+This page lists all VCF records normalized to that variant coordinate.

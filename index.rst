@@ -93,7 +93,6 @@ VariantGrid is an open source variant database and web application for analyzing
    classification/classification_flags
    classification/variant_classification_report
    classification/variant_classification_redcap
-   variants/normalization
 
 
 Indices and tables
