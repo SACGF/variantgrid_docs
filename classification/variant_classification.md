@@ -2,15 +2,24 @@
 
 ## Creating Classifications
 
+Create classifications as follows:
+
 * From an analysis (see [analysis classification workflow](../analysis/analysis_classification.md))
-* From the [variant details page](../annotation/variant_details.md)
+* From an existing variant via the [variant details page](../annotation/variant_details.md)
 * Via API (See [Shariant API docs](https://shariant.readthedocs.io/en/latest/integration/api/classification_post.html))
+* Entering a HGVS name into the box at the top of the classifications page.  
 
-## Autopopulation
+## Create from existing variant
 
-When you create a classification from inside the system, a number of fields are auto-populated from annotation and sample information.
+When you click "New Classification" from the allele or variant details page, you are shown a form to pick the transcript and sample:
+ 
+![](images/classification_choose_transcript.png)
 
-Variants created from the external API are not auto-populated with values from annotation. 
+A number of fields are auto-populated from [annotation](../annotation/annotation_details.md) and sample information (data from VCF record, patient phenotype etc).
+
+Classifications made against a sample are linked from the bottom of the VCF and sample pages.
+
+Variants created from the external API are not auto-populated from annotation. 
 
 ## Editing
 

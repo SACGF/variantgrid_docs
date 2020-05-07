@@ -32,7 +32,7 @@ VariantGrid is an open source variant database and web application for analyzing
 
    annotation/annotation_details
    annotation/variant_details
-   annotation/representative_transcript
+   annotation/transcript_choice
 
 .. toctree::
    :maxdepth: 2

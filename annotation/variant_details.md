@@ -17,7 +17,7 @@ The far right column contains [Classification Flags](../classification/classific
 
 ## Transcripts
 
-Variant annotation is calculated for each transcripts overlapping a variant. You can select each of the different transcripts to change which is being displayed. 
+Variant annotation is calculated for each transcripts overlapping a variant. You can select each of the different transcripts to change which is being displayed. A transcript can be labelled as [Representative](transcript_choice.md) (most damaging for variant shown on analysis grid) or canonical (transcript chosen for gene by RefSeq/Ensembl) 
 
 ## Samples
 

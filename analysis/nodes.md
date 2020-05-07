@@ -65,7 +65,16 @@ Filter based on column values
 
 ![](images/nodes/node_gene_list.png "Gene List")
 
-Filter to a list of gene symbols
+Filter to a list of gene symbols.
+
+![](images/node_editors/gene_list_node_editor.png)
+
+Used **Named Gene Lists** to select existing [Gene Lists](../genes/gene_lists.md). You can select multiple lists at a time.
+
+This node returns variants where ANY TRANSCRIPT matches the genes in the list, see [transcript choice](../annotation/transcript_choice.md)
+
+View the "Genes" tab to see which genes are being used by the filter.
+  
 
 ### Intervals Intersection
 
