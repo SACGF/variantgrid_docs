@@ -8,7 +8,7 @@ To generate the report from a classification, open the classification and scroll
 
 The report can only be configured by admin users. Each "organisation" within variantgrid uses its own report. To edit it go to the admin view, Organisations, (your organisation), and then edit the Classification report template.
 
-The template is run using Django template and produces HTML
+The template is run using [Django template](https://docs.djangoproject.com/en/3.0/topics/templates/) and produces HTML
 
 ## Values available for the report
 
