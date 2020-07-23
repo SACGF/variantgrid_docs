@@ -39,28 +39,21 @@ This calculated value has no affect on any of the data, the user is still able t
 
 At the bottom of the form there will be a list of action buttons.
 
-The Tick icon re-submits the classification at its current change level. For any manual changes to be seen, this button will need to be ticked.
 
-Next to it is a Share button that allows you to increase the scope of who can see the classification.
-Important, increasing the Share level is not un-doable.
-The share levels are
-* Just your lab
-* Anyone within your organisation (if your organisation has multiple labs)
-* All Shariant Users
-* 3rd Party Databases (this will allow us to upload the record to Clinvar at a later date)
+![Tick](images/classification_form_action_button_tick.png) - re-submits the classification at its current change level. For any manual changes to be seen, this button will need to be ticked.
 
-### Delete / Withdraw
+![Share](images/classification_form_action_button_share.png) increases who can see the classification, see [Classification Sharing](variant_classification_sharing.md)
 
-If the classification has only been shared at the lab or organisation level, you are able to perform a hard delete on the record.
-If it has been shared, instead you have the option to "withdraw". This will remove the record from most listings and search results, but will not remove it from any Discordance Reports that it had been involved in (it will no longer be a part of discordance calculations).
-
-When a record has been withdrawn it can be unwithdrawn by clicking the same button (it should look like a rubbish bin with a raised lid now).
+![Delete/Widthdraw](images/classification_form_action_button_delete.png) - Delete an unshared classification, or withdrawal (hide/ignore) a shared one. 
 
 ### Export
 
-You can also export the single record as CSV, a preview of the Clinvar format or as a report.
+You can also export the single record as CSV, a preview of the [Clinvar](https://www.ncbi.nlm.nih.gov/clinvar/) format or as a [report](variant_classification_report.md).
 (The report does require that your lab has a report template pre-configured.)
 
 ### Literature Citations
+
+![](images/classification_form_literature.png)
+
 
 Any PMID references in the form of PMID:123456 from anywhere within the classification will be summed together and listed at the bottom of the classification.
