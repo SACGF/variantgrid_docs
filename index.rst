@@ -24,6 +24,7 @@ VariantGrid is an open source variant database and web application for analyzing
    analysis/analysis_advanced
    analysis/tagging
    analysis/analysis_classification
+   analysis/analysis_templates
    analysis/karyomapping
 
 .. toctree::
