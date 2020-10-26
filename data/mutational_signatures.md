@@ -2,7 +2,7 @@
 
 The type of somatic mutations present in a cancer sample can provide insights into the underlying molecular mechanisms driving oncogenesis. For example, cancer caused by tobacco exposure will result in an increased number of C>A transversions compared to cancers unrelated to tobacco. The advent of large cancer datasets has identified at least 21 conserved mutation signatures indicative of exposure or defective DNA damage repair mechanisms. For further details see  [Signatures of mutational processes in human cancer, Alexandrov et al 2013](https://www.nature.com/articles/nature12477)
 
-VariantGrid will automatically run mutation signature detection at vcf upload, but only if the vcf is detected as a somatic only (germline substracted) sample. This can be defined in the vcf header by ##source=combine_caller_data. It is not possible to manually run mutation signature analysis in VariantGrid once the vcf has been uploaded.
+VariantGrid will automatically run mutation signature detection at vcf upload if the vcf is detected as a somatic only (germline subtracted) sample. VariantGrid recognises a sample as 'somatic only' based on information provided in the vcf header. Your VariantGrid administrator will need to setup the VCFSource object config to enable this functionality. It is not possible to manually run mutation signature analysis in VariantGrid once the vcf has been uploaded.
 
 To view a mutation signature report go to:  
 Menu: **[data]** -> Sort samples grid by "Mutational Signature" column -> Click on entry.  
