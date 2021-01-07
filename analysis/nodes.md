@@ -39,6 +39,32 @@ A sample, usually one genotype (patient, cell or organism) with a set of variant
 
 Mother/Father/Proband - filter for recessive/dominant/denovo inheritance
 
+|                    | Proband      | Mother       | Father       |
+|--------------------| ------------ | ------------ | ------------:|
+| Recessive          | HOM ALT      | HET          | HET          |
+| Dominant (both)    | HET, HOM ALT | HET, HOM ALT | HET, HOM ALT |
+| Dominant (mother)  | HET, HOM ALT | HET, HOM ALT | REF          |
+| Dominant (father)  | HET, HOM ALT | REF          | HET, HOM ALT |
+| Denovo             | HET, HOM ALT | REF          | REF          |
+| X-Linked Recessive | HOM ALT      | HET          |              |
+
+
+Compound HET
+
+|                    | Proband      | Mother       | Father       |
+|--------------------| ------------ | ------------ | ------------:|
+| Het from mother    | HET          | HET          | REF          |
+| Het from father    | HET          | REF          | HET          |
+
+
+Find common genes with *both* "het from mother" and "het from father" and zygosity of (het from mother OR het from father)
+
+If "require parent zygosity" is False - parent zygosities may be "Unknown" (no coverage)
+
+
+
+
+
 ## Filter Nodes
 
 These nodes filter variants connected to the top of them
