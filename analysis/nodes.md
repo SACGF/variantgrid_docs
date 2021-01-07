@@ -2,42 +2,71 @@
 
 ## Source Nodes
 
-Provide a source of variants
+Source nodes allow you to add variants to your analysis either by adding samples, groups of samples, or groups of variants from within the VariantGrid database. Each source node provides options to filter the variants available.  Before changing the default filters available on the source nodes it's important to be familiar in interpreting variant zygosity and parameters (AD,DP,GQ,PL, AF) as these filters will have a marked impact on the variants displayed for analysis.
+
+The following sections provide details of each of the different source nodes and associated filters available to curators.
 
 ### All Variants
 
 ![](images/nodes/node_all_variants.png "All Variants")
 
-All variants in the database.
+This node will add all variants available in the VariantGrid database at the time the node is added. Only variants from data and samples for which you have permission will be displayed. These variants can be filtered by gene and zygosity as required. The default filter is to require a minimum of 1 zygosity call as this removes variants with unknown zygosity or variants that are not associated with samples in the database. 
+
+By default only variant calls are displayed. To see reference calls, check the 'Show Reference Variants', but be aware that this will dramatically increase the size of the data set. In general, reference calls are only available from multi-sample vcfs. 
+
+The All Variants node reflects the variants in the database at a point in time. To update the node to reflect the current database state, simply re-click the 'Save' button at the bottom of the All Variants node settings. All child nodes will be automatically recalculated to reflect the change.
 
 ### Cohort
 
 ![](images/nodes/node_cohort.png "Cohort")
 
-A collection of related samples, eg "control group" or "poor responders"
+Used to add a collection of related samples, eg "control group" or "poor responders". 
+
+VariantGrid will automatically generate a cohort for each vcf upon upload. This cohort will contain all samples in the vcf. All other cohorts need to be defined manually by the user. Once defined, a cohort will be available for selection in the dropdown menu on the cohort node. It is recommended, though not essential, that samples to be analysed as a cohort are joint-called in the same vcf where possible. 
+
+There are two main approaches available to filter variants within a cohort:
+1. **Parameter Filtering:** Filtering based on any combination of the variant parameters AD,DP,GQ,PL or AF. Parameter filtering will be applied to all samples in the cohort. Note that not all vcfs will contain values for these parameters. Missing values will result in variants being inadvertently filtered from the cohort, so check your samples carefully before applying these filters. 
+2. **Zygosity filtering:** There are 3 methods for filtering cohorts by zygosity: zygosity counts, simple zygosity or sample zygosity. The selected method is the method that is expanded after the node filters have been saved. 
+
+Parameter and zygosity filtering can be applied together, however, only one zygosity filter type (count, simple or sample) can be applied at any one time. 
+By default cohorts are filtered using only the simple zygosity method: Het or Hom_Alt for ALL samples. 
+
 
 ### Classifications
 
 ![](images/nodes/node_classifications.png "Classifications")
 
+The Classifications node is used to add internally classified variants to the analysis workflow. 
+
+Use the 'Less than or equal to', 'Exactly' or 'Greater than or equal to' options to filter classified variants by clinical significance. 
+
+This filter can also be used to remove variants that have been classified as artefacts, drug response or risk factor from an analysis. To do so, select 'exactly' 'other' filters and then use a venn node to subtract this variant list from your other nodes of interest. 
 
 ### Pedigree
 
 ![](images/nodes/node_pedigree.png "Pedigree")
 
-Variants from family samples filtered by genotype according to inheritance models
+Variants from family samples filtered by genotype according to inheritance models.
 
 ### Sample
 
 ![](images/nodes/node_sample.png "Sample")
 
-A sample, usually one genotype (patient, cell or organism) with a set of variants.
+This node will load all variants present in a sample (equivalent to a single column in a vcf). A sample is usually one genotype (patient, cell or organism) with a set of variants.
+
+This node is particularly useful for singleton analyses. Similar to the cohort node, a sample node can be filtered by variant parameters AD,DP,GQ,PL or AF (if available in the vcf), and also the variant zygosity. 
+
+
 
 ### Trio
 
 ![](images/nodes/node_trio.png "Trio")
 
-Mother/Father/Proband - filter for recessive/dominant/denovo inheritance
+This node adds all variants present in a trio of samples. Trios need to be defined manually by the user. This includes specifing parental and proband samples, along with the affected status of the samples. Once defined, a trio will be available for selection in the dropdown menu on the trio node in the analysis workspace. It is recommended, though not essential, that samples to be analysed as a trio are joint-called in the same vcf where possible otherwise it is not possible to determine whether missing data is due to a reference call or a lack of coverage at the locus. 
+
+Each trio node requires an inheritance mode to be selected. This selection will then filter the variants according to the zygosities as listed in the table below. Only one inheritance mode can be selected per trio node. To assess multiple different modes of inheritance add multiple trio nodes to the analysis workspace. Use the default trio analysis template to quickly construct a trio analysis. 
+
+Required zygosity calls for each mode of inheritance in the trio node: 
 
 |                    | Proband      | Mother       | Father       |
 |--------------------| ------------ | ------------ | ------------:|
@@ -49,6 +78,12 @@ Mother/Father/Proband - filter for recessive/dominant/denovo inheritance
 | X-Linked Recessive | HOM ALT      | HET          |              |
 
 
+
+In addition to the above modes of inheritance the trio node can be used to filter a sample to compound het variants. To do so add the trio node below an existing workflow for a sample and select the compound het mode of inheritance. This filter finds common genes with *both* "het from mother" and "het from father" and zygosity of (het from mother OR het from father) as per the table below.
+
+Note that the placement of the compound het filter within a workflow is important. If the node input contains too many variants or artefacts, many false positive compound het calls will be shown in the trio c.het node. Conversely, if the filtering has been too stringent, real compound het variants will be excluded. 
+
+
 Compound HET
 
 |                    | Proband      | Mother       | Father       |
@@ -57,11 +92,8 @@ Compound HET
 | Het from father    | HET          | REF          | HET          |
 
 
-Find common genes with *both* "het from mother" and "het from father" and zygosity of (het from mother OR het from father)
 
-If "require parent zygosity" is False - parent zygosities may be "Unknown" (no coverage)
-
-
+If "require parent zygosity" is False - parent zygosities may be "Unknown". Selecting this option will allow variants with low or no coverage in parental samples to pass the zygosity filters. Note that if the samples have not been joint-called this may also allow parental reference calls through due to missing data. 
 
 
 
