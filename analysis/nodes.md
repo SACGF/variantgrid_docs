@@ -69,6 +69,14 @@ If "require parent zygosity" is False - parent zygosities may be "Unknown" (no c
 
 These nodes filter variants connected to the top of them
 
+### Allele Frequency
+
+![](images/nodes/node_allele_frequency.png "Allele Frequency")
+
+Filter based on a sample's allele frequency.
+
+![](images/node_editors/allele_frequency_editor.png)
+
 ### Built In Filter
 
 ![](images/nodes/node_built_in_filter.png "Built in Filter")
