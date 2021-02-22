@@ -42,13 +42,13 @@ At the bottom of the form there will be a list of action buttons.
 
 ![Tick](images/classification_form_action_button_tick.png) - re-submits the classification at its current change level. For any manual changes to be seen, this button will need to be ticked.
 
-![Share](images/classification_form_action_button_share.png) increases who can see the classification, see [Classification Sharing](variant_classification_sharing.md)
+![Share](images/classification_form_action_button_share.png) increases who can see the classification, see [Classification Sharing](classification_sharing.md)
 
 ![Delete/Widthdraw](images/classification_form_action_button_delete.png) - Delete an unshared classification, or withdrawal (hide/ignore) a shared one. 
 
 ### Export
 
-You can also export the single record as CSV, a preview of the [Clinvar](https://www.ncbi.nlm.nih.gov/clinvar/) format or as a [report](variant_classification_report.md).
+You can also export the single record as CSV, a preview of the [Clinvar](https://www.ncbi.nlm.nih.gov/clinvar/) format or as a [report](classification_report.md).
 (The report does require that your lab has a report template pre-configured.)
 
 ### Literature Citations

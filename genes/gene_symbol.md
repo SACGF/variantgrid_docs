@@ -1,9 +1,14 @@
 # Gene Symbol page
 
-The Gene Symbol page provides a combined summary of the gene annotation information derived from the associated RefSeq and Ensembl gene IDs. To see details of the genes IDs and transcripts associated with the gene symbol click on the RefSeq and Ensembl links at the top of the page. 
+The Gene Symbol shows annotation and internal data for a gene.  
+
+To see details of the genes IDs and transcripts associated with the gene symbol click on the RefSeq and Ensembl links at the top of the page. 
+
+## Gene Annotation
 
 Information on the page is combined from a wide-range of sources as follows:
-- Aliases: A list of all gene symbol aliases recognised by VariantGrid as associated with the gene symbol. A warning is shown if the alias maps to multiple gene IDs.
+
+- Aliases: A list of all gene symbol aliases. A warning is shown if the alias maps to multiple gene IDs.
 - Summary: imported from RefSeq (if gene symbol linked to RefSeq gene)
 - HGNC: Information derived from the HUGO Gene Nomenclature Committee based on the given gene symbol
 - Uniprot: Information derived from the UniProt protein database
@@ -12,10 +17,10 @@ Information on the page is combined from a wide-range of sources as follows:
 - PanelApp: Gene panels from Geneomics England and Australia PanelApp websites. Note that PanelApp data is updated on a periodic basis. The date of last update is available in the annotations menu. Contact your VariantGrid administrator if a PanelApp update is required.
 - Ontology terms: HPO and OMIM terms associated with the gene symbol in VariantGrid. Only displayed when linked term identified.
 
-## Internal gene information 
+## Internal gene data
 
-The bottom section of the gene symbol page displays internal VariantGrid data a 3 separate grids: classifications grid, gene variants grid and a gene lists grid. These grids will only display when data are available. 
+The bottom of the page has 3 grids showing internal data (grids only display when data available) 
 
-- Gene classifications: A summary table of all classifications associated with the gene symbol. Click on the links to access the full classification record.
-- Gene Variants: A list of all variants located within the genic locus with a Het or Hom_Alt count >= 1 (this excludes low AF somatic variants), as well as any variant that has been tagged or classified in the database (warning: classified/tagged variants may include somatic variants). Columns in the Gene Variants grid below are based on your User Settings. Change your default column selection to alter the display. To explore the data in the grid click the filter link to display the advanced filter controls. 
+- Classifications: Summary table of classifications associated with the gene symbol. Click on the links to access the full classification record.
+- Variants: A list of all variants located within the genic locus with a Het or Hom_Alt count >= 1 (this excludes low AF somatic variants), as well as any variant that has been tagged or classified in the database (warning: classified/tagged variants may include somatic variants). Columns in the Gene Variants grid below are based on your User Settings. Change your default column selection to alter the display. To explore the data in the grid click the filter link to display the advanced filter controls. 
 - Gene Lists: A table of all user entered gene lists containing the gene symbol.

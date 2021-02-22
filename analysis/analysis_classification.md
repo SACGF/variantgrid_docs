@@ -1,6 +1,6 @@
 ## Analysis Classification
 
-Recommended workflow to create a [classification](../classification/variant_classification.md) from a variant in an analysis:
+Recommended workflow to create a [classification](../classification/classification.md) from a variant in an analysis:
 
 1. [Tag](../analysis/tagging.md) the variant with the "RequiresClassification" tag.
 

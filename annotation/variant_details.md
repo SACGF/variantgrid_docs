@@ -11,7 +11,7 @@ An allele is genome build independent - ie hg19 and hg38 variants for same chang
 
 ![Variant Details - Classification section](images/variant_details_classifications.png)
 
-This shows internal [classifications](../classification/variant_classification.md) for an allele (may have been classified against a different genome build)
+This shows internal [classifications](../classification/classification.md) for an allele (may have been classified against a different genome build)
 
 The far right column contains [Classification Flags](../classification/classification_flags.md)
 

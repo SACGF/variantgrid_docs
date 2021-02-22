@@ -23,7 +23,7 @@ Variants created from the external API are not auto-populated from annotation.
 
 ## Editing
 
-See the [Classification Form](variant_classification_form).
+See the [Classification Form](classification_form).
 
 ## Configuring Fields
 

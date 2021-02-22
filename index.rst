@@ -50,7 +50,8 @@ VariantGrid is an open source variant database and web application for analyzing
    :maxdepth: 2
    :caption: Genes:
 
-   genes/gene_page
+   genes/genes
+   genes/gene_symbol
    genes/gene_lists
    genes/genegrid
    genes/gene_coverage
@@ -87,14 +88,14 @@ VariantGrid is an open source variant database and web application for analyzing
 
 .. toctree::
    :maxdepth: 2
-   :caption: Variant Classification:
+   :caption: Classification:
 
-   classification/variant_classification
-   classification/variant_classification_form
-   classification/variant_classification_sharing
-   classification/variant_classification_flags
-   classification/variant_classification_report
-   classification/variant_classification_redcap
+   classification/classification
+   classification/classification_form
+   classification/classification_sharing
+   classification/classification_flags
+   classification/classification_report
+   classification/classification_redcap
 
 
 Indices and tables
