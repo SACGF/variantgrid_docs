@@ -1,4 +1,4 @@
-# Variant Classification REDCap
+# Classification REDCap
 
 Variantgrid supports the exporting of Variant Classification data into REDCap files.
 Note that this is currently the full extent of REDCap integration with Variantgrid, there is no support for importing REDCap records or exporting any other kinds of records in a REDCap format.

@@ -1,4 +1,4 @@
-# Variant Classifications
+# Classifications
 
 ## Creating Classifications
 

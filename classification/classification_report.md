@@ -1,4 +1,4 @@
-# Variant Classification Report
+# Classification Report
 
 ## Running the report
 

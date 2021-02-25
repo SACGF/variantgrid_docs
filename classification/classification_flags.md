@@ -1,4 +1,4 @@
-# Variant Classification Flags
+# Classification Flags
 
 Each classification flag indiciates that there is an action that needs to be performed against the classification.
 

@@ -1,4 +1,4 @@
-# Variant Classification Form
+# Classification Form
 
 The Classification Web Form can be used to create and edit classifications directly within VariantGrid.
 

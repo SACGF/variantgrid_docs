@@ -1,4 +1,4 @@
-# Variant Classification Sharing
+# Classification Sharing
 
 ### How to share 
 
