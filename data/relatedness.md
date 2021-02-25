@@ -50,7 +50,9 @@ Somalier creates an ancestry report which can be viewed on the **ancestry** tab 
 
 Samples are displayed on a PCA plot with individuals from the 1000 genomes project, which have labelled ancestries.
 
-Somalier makes an ancestry prediction by comparing a sample with clusters from data with labelled ancestries. The reported ancestry is the primary one and does not include admixture. 
+Somalier makes an ancestry prediction by comparing a sample with clusters from data with labelled ancestries.
+
+The reported ancestry on the samples grid is the primary one and does not include admixture. A full breakdown of scores for all population groups can be found on the **ancestry** tab on the view sample page.
 
 ### Implementation details
 
