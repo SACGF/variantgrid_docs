@@ -44,6 +44,7 @@ VariantGrid is an open source variant database and web application for analyzing
    data/somatic_allele_frequency
    data/mutational_signatures
    data/vcf_samples
+   data/relatedness
    data/search
 
 .. toctree::
