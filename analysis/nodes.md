@@ -12,7 +12,7 @@ The following sections provide details of each of the different source nodes and
 
 This node will add all variants available in the VariantGrid database at the time the node is added. Only variants from data and samples for which you have permission will be displayed. These variants can be filtered by gene and zygosity as required. The default filter is to require a minimum of 1 zygosity call as this removes variants with unknown zygosity or variants that are not associated with samples in the database. 
 
-By default only variant calls are displayed. To see reference calls, check the 'Show Reference Variants', but be aware that this will dramatically increase the size of the data set. In general, reference calls are only available from multi-sample vcfs. 
+By default only variant calls are displayed (e.g. hom_alt, het). To see reference calls (hom_ref), check the 'Show Reference Variants', but be aware that this will dramatically increase the size of the data set. In general, reference calls are only available from multi-sample vcfs. 
 
 The All Variants node reflects the variants in the database at a point in time. To update the node to reflect the current database state, simply re-click the 'Save' button at the bottom of the All Variants node settings. All child nodes will be automatically recalculated to reflect the change.
 
@@ -115,11 +115,93 @@ Filter based on a sample's allele frequency.
 
 Built in filters used in node counts eg High or Moderate Impact / OMIM / ClinVar Pathological
 
-### Damage
+### Effect
 
 ![](images/nodes/node_damage.png "Damage")
 
-Filter to damage predictions
+The effect node allows for quick filtering of variants based on a combination of predictions and information sets. 
+
+To enable any of the pre-set filters, click the left checkbox then move the slider to select variants meeting or exceeding the set threshold (T). By default, if multiple filters are selected variants will be shown that meet **ANY** of the of the criteria. It is recommended to **ALWAYS** include IMPACT min = HIGH in a basic filter set as this will prevent inadvert loss of intronic/indel/start/stop etc. variants that lack prediction data.
+
+#### AVAILBLE FILTERS
+
+**Impact min**  
+Allow variants with an impact greater or equal to the threshold.  
+Impact levels are ordered as follows: MODIFIER < LOW < MODERATE < HIGH  
+For example, impact min = LOW will display variants with IMPACT = LOW OR MOD OR HIGH
+
+**Splice min**  
+Variants meeting the following criteria will be displayed: 
+dbscSNV.ADA >= T OR   
+dbscSNV.RF >= T OR  
+SliceAI.DL.Score >= T OR  
+SpliceAI.DG.Score >= T OR  
+SpliceAI.AL.Score >= T OR  
+SpliceAI.AG.Score >= T OR   
+is splice indel 
+
+A splice indel is defined as: (splice region is not null AND variant class is not SNV). Splice indels have been included to ensure that insertions, deletions and complex variants in a splice region are not removed by the filter as these variants are not assessed by splicing predictors. 
+
+**CADD score min**  
+CADD phred >= T
+
+**REVEL score min**  
+REVEL score >= T
+
+**COSMIC count min**  
+COSMIC count >= T
+
+**Damage predictions min**  
+sum(pathogenic predictions for variant) >= T
+
+A prediction is considered pathogenic if it meets the following criteria:
+* SIFT = damaging
+* Polyphen2 = possibly or probably damaging
+* Mutation assessor = medium or high
+* Mutation taster = disease causing
+* Fathmm = damaging
+
+**Protein domain**  
+A value exists for at least one of the following fields:
+* Interpro_domains
+* domains
+
+**Published**  
+A value exists for at least one of the following fields:
+* Pubmed
+* MM variant article count
+* MM variant/protein article count
+* MM aa article count
+* MM AA ID 
+
+
+#### FILTERING EXAMPLES
+
+Take for example 2 variants:
+
+| Variant            | Class        | CADD         | REVEL        | IMPACT       |
+|--------------------| ------------ | ------------ | ------------ | ------------:|
+| Variant 1          | SNV          | 27           | 0.4          | MODERATE     | 
+| Variant 2          | DEL          |              |              | HIGH         | 
+
+**Example 1:** CADD 20; REVEL 0.7; IMPACT MOD  
+Computed as: CADD >= 20 OR REVEL >= 0.7 OR IMPACT >= MOD  
+Both Variant 1 & 2 will displayed.
+
+
+**Advanced use:**
+Click on the required link to display required and null checkbox options. Warning: do not use these checkboxes unless you are comfortable with Boolean logic and the behaviour of null data for your selected filters. If a criterion **MUST** be met to display a variant, select the required box for each required criterion. Make sure to check the "Allow Null" box if results should include variants with missing data for the selected criterion. It is particularly important to check the 'Allow null' box if REVEL or CADD scores are set to 'required' otherwise all indels will be filtered as predictions are only available for SNVs. 
+
+Here are a couple of advanced examples using the variants from the table above:
+
+**Example 2:** CADD 20; REVEL 0.7 (required); IMPACT MOD  
+REVEL >= 0.7 AND (CADD >= 20 OR IMPACT >= MOD)  
+No variants will displayed.
+
+**Example 3:** CADD 20 (required, null); REVEL 0.7; IMPACT MOD  
+(REVEL >= 0.7 OR REVEL is null) AND (CADD >= 20 OR IMPACT >= MOD)  
+Only variant 2 will be displayed.
+
 
 ### Filter
 
