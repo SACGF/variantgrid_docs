@@ -3,10 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-VariantGrid documentation
-=========================
+VariantGrid Docs
+================
 
-VariantGrid is an open source variant database and web application for analyzing genetic data.
+[VariantGrid](https://variantgrid.com) is an [source available](https://github.com/SACGF/variantgrid) variant database and web application for analyzing genetic data.
+
+This documentation is intended for users. There are also [Admin docs](https://variantgrid-admin-docs.readthedocs.io) and [Developers Technical Wiki](https://github.com/SACGF/variantgrid/wiki)
 
 .. toctree::
    :maxdepth: 2
