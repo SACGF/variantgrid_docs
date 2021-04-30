@@ -36,11 +36,12 @@ By default cohorts are filtered using only the simple zygosity method: Het or Ho
 
 ![](images/nodes/node_classifications.png "Classifications")
 
-The Classifications node is used to add internally classified variants to the analysis workflow. 
+The Classifications node is used to add internally classified variants to the analysis workflow.  Use the checkboxes to display variants with classifications matching the selected clinical significance. 
 
-Use the 'Less than or equal to', 'Exactly' or 'Greater than or equal to' options to filter classified variants by clinical significance. 
+The 'other' checkbox includes the following: artefacts, drug response or risk factor.
 
-This filter can also be used to remove variants that have been classified as artefacts, drug response or risk factor from an analysis. To do so, select 'exactly' 'other' filters and then use a venn node to subtract this variant list from your other nodes of interest. 
+If a variant has been classified multiple times with differing clinical significance it will be shown if any of the classifications match the selected clinical significance. For example, let's say the ASLX1 variant X has been classified as both an artefact and likely pathogenic (this situation may occur if a truly pathogenic variant can't be reliably sequenced on a specific platform, e.g. amplicon v capture).  In this case Variant X will be displayed if either of the artefact or likely pathogenic tickboxes are selected.
+
 
 ### Pedigree
 
@@ -54,7 +55,7 @@ Variants from family samples filtered by genotype according to inheritance model
 
 This node will load all variants present in a sample (equivalent to a single column in a vcf). A sample is usually one genotype (patient, cell or organism) with a set of variants.
 
-This node is particularly useful for singleton analyses. Similar to the cohort node, a sample node can be filtered by variant parameters AD,DP,GQ,PL or AF (if available in the vcf), and also the variant zygosity. 
+This node is particularly useful for singleton analyses. Similar to the cohort node, a sample node can be filtered by variant parameters AD,DP,GQ,PL or AF (if available in the vcf), and also the variant zygosity. Before filtering by variant parameters make sure that they have been provided in the vcf otherwise no variants will be shown! 
 
 
 
@@ -105,7 +106,9 @@ These nodes filter variants connected to the top of them
 
 ![](images/nodes/node_allele_frequency.png "Allele Frequency")
 
-Filter based on a sample's allele frequency.
+Filter based on a sample's variant allele frequency (AF). If multiple samples have been used in the analysis workflow, make sure to select the sample of interest using the dropdown in the node menu. 
+
+The AF is reported as provided by the vcf, if the AF is missing from the vcf VariantGrid will calculate the AF. Details on the source of the AF are provided in the vcf header, which can be viewed in the vcf info tab on the vcf details page (/snpdb/view_vcf/X)
 
 ![](images/node_editors/allele_frequency_editor.png)
 
@@ -113,7 +116,14 @@ Filter based on a sample's allele frequency.
 
 ![](images/nodes/node_built_in_filter.png "Built in Filter")
 
-Built in filters used in node counts eg High or Moderate Impact / OMIM / ClinVar Pathological
+The built in filter allows selection of commonly used variant classes including variants with:
+* ClinVar - Variants with a ClinVar Max classification of Likely Pathogenic or Pathogenic
+* OMIM Phenotype - Variants in genes with an OMIM phenotype
+* HIGH or MODERATE IMPACT - Variants with a HIGH or MODERATE IMPACT as predicted by the VEP pipeline
+* Classified - Variants that have been classified in VariantGrid with any clinical significance
+* Classified Pathogenic - Variants that have been classified in VariantGrid with a maximum clinical significance of Likely Pathogenic or Pathogenic
+* COSMIC - Variants reported in the COSMIC database (COSMIC count > 0)
+
 
 ### Effect
 
@@ -121,26 +131,37 @@ Built in filters used in node counts eg High or Moderate Impact / OMIM / ClinVar
 
 The effect node allows for quick filtering of variants based on a combination of predictions and information sets. 
 
-To enable any of the pre-set filters, click the left checkbox then move the slider to select variants meeting or exceeding the set threshold (T). By default, if multiple filters are selected variants will be shown that meet **ANY** of the of the criteria. It is recommended to **ALWAYS** include IMPACT min = HIGH in a basic filter set as this will prevent inadvert loss of intronic/indel/start/stop etc. variants that lack prediction data.
+To enable any of the pre-set filters, click the left checkbox then move the slider to select variants meeting or exceeding the set threshold (T). By default, if multiple filters are selected variants will be shown that meet **ANY** of the of the criteria. It is recommended to **ALWAYS** include IMPACT min = HIGH in a basic filter set as this will prevent inadvert loss of loss of function variants (frameshift/splice donor/start loss/stop gain etc.) that lack prediction data.
 
 #### AVAILBLE FILTERS
 
 **Impact min**  
-Allow variants with an impact greater or equal to the threshold.  
-Impact levels are ordered as follows: MODIFIER < LOW < MODERATE < HIGH  
-For example, impact min = LOW will display variants with IMPACT = LOW OR MOD OR HIGH
+Allow variants with an impact greater or equal to the selected impact level. Impact levels are ordered as follows: MODIFIER < LOW < MODERATE < HIGH  
+For example, impact min = LOW will display variants with IMPACT = LOW or MODERATE or HIGH
+
+The MODERATE* filter is a special case developed to exclude missense variants. The MODERATE* filter was designed so that curators can quickly remove tolerated/benign missense variants. **It is recommended to always use the MODERATE* option in combination with one or more of the REVEL, CADD or Damage Predictor options to control which missense variants will be displayed.** Specifically MODERATE* will display variants as follows:
+* Any variants with IMPACT = HIGH  plus
+* Any variants with IMPACT = MODERATE and VARIANT CLASS != SNV
+
+As an example, test filtering your dataset using only the MODERATE option. You will see that all missense variants are displayed (along with MODERATE indels/substitutions and all HIGH impact variants). Many of the missense variants have low pathogenicity predictions and no other data to indicate they are deleterious. These variants are normally discarded by curators upon review. To speed up this process, now trying filtering your dataset using the MODERATE* option + REVEL min = 0.7. Now you will see that the only missense variants displayed are those with REVEL scores greater or equal to 0.7. These are your missense variants of interest. Because you've chosen the MODERATE* filter you'll still see indels/substitutions with MODERATE impact along with all HIGH impact variants. 
+
 
 **Splice min**  
-Variants meeting the following criteria will be displayed: 
-dbscSNV.ADA >= T OR   
-dbscSNV.RF >= T OR  
-SliceAI.DL.Score >= T OR  
-SpliceAI.DG.Score >= T OR  
-SpliceAI.AL.Score >= T OR  
-SpliceAI.AG.Score >= T OR   
-is splice indel 
+Variants meeting the following criteria will be displayed:  
 
-A splice indel is defined as: (splice region is not null AND variant class is not SNV). Splice indels have been included to ensure that insertions, deletions and complex variants in a splice region are not removed by the filter as these variants are not assessed by splicing predictors. 
+* dbscSNV.ADA >= T or   
+* dbscSNV.RF >= T or  
+* SliceAI.DL.Score >= T or  
+* SpliceAI.DG.Score >= T or  
+* SpliceAI.AL.Score >= T or  
+* SpliceAI.AG.Score >= T or   
+* is splice indel 
+
+Where a splice indel is defined as: (splice region is not null AND variant class is not SNV). Splice indels have been included to ensure that insertions, deletions and complex variants in a splice region are not removed by the filter as these variants are not generally assessed by splicing predictors. As a rule of thumb a splice threshold of 0.2 is lenient, 0.4 moderate and 0.6 stringent. 
+
+For further information on these splicing predictors see:  
+SpliceAI: https://pubmed.ncbi.nlm.nih.gov/30661751/  
+dbscSNV: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4267638/  
 
 **CADD score min**  
 CADD phred >= T
@@ -162,12 +183,12 @@ A prediction is considered pathogenic if it meets the following criteria:
 * Fathmm = damaging
 
 **Protein domain**  
-A value exists for at least one of the following fields:
+If selected, this will display variants with values in at least one of the following fields:
 * Interpro_domains
 * domains
 
 **Published**  
-A value exists for at least one of the following fields:
+If selected, this will display variants with values in at least one of the following fields:
 * Pubmed
 * MM variant article count
 * MM variant/protein article count
@@ -177,30 +198,32 @@ A value exists for at least one of the following fields:
 
 #### FILTERING EXAMPLES
 
-Take for example 2 variants:
+Using the following 2 variants as an example:
 
 | Variant            | Class        | CADD         | REVEL        | IMPACT       |
 |--------------------| ------------ | ------------ | ------------ | ------------:|
 | Variant 1          | SNV          | 27           | 0.4          | MODERATE     | 
 | Variant 2          | DEL          |              |              | HIGH         | 
+| Variant 3          | SNV          | 2            |              | MODERATE     | 
 
-**Example 1:** CADD 20; REVEL 0.7; IMPACT MOD  
+Example 1:
+Filter Set: CADD 20; REVEL 0.7; IMPACT MOD  
 Computed as: CADD >= 20 OR REVEL >= 0.7 OR IMPACT >= MOD  
-Both Variant 1 & 2 will displayed.
+Result: Both Variant 1 & 2 will displayed.
 
 
-**Advanced use:**
-Click on the required link to display required and null checkbox options. Warning: do not use these checkboxes unless you are comfortable with Boolean logic and the behaviour of null data for your selected filters. If a criterion **MUST** be met to display a variant, select the required box for each required criterion. Make sure to check the "Allow Null" box if results should include variants with missing data for the selected criterion. It is particularly important to check the 'Allow null' box if REVEL or CADD scores are set to 'required' otherwise all indels will be filtered as predictions are only available for SNVs. 
+Advanced use of effect node filters:
+Click on the required link to display required and null checkbox options. Warning: do not use these checkboxes unless you are comfortable with Boolean logic and the behaviour of null data for your selected filters. If a criterion **MUST** be met to display a variant, select the required box for each required criterion. Make sure to check the **"Allow Null"** box if results should include variants with missing data for the selected criterion. It is particularly important to check the 'Allow null' box if REVEL or CADD scores are set to 'required' otherwise all indels will be filtered as predictions are only available for SNVs. Below are some advanced examples using the variants from the table above:
 
-Here are a couple of advanced examples using the variants from the table above:
+Example 2: 
+Filter set: CADD 20; REVEL 0.7 (required); IMPACT MOD  
+Computed as: REVEL >= 0.7 AND (CADD >= 20 OR IMPACT >= MOD)  
+Result: No variants will displayed.
 
-**Example 2:** CADD 20; REVEL 0.7 (required); IMPACT MOD  
-REVEL >= 0.7 AND (CADD >= 20 OR IMPACT >= MOD)  
-No variants will displayed.
-
-**Example 3:** CADD 20 (required, null); REVEL 0.7; IMPACT MOD  
-(REVEL >= 0.7 OR REVEL is null) AND (CADD >= 20 OR IMPACT >= MOD)  
-Only variant 2 will be displayed.
+Example 3:
+Filter set: CADD 20 (required, null); REVEL 0.7; IMPACT MOD  
+Computed as: (REVEL >= 0.7 OR REVEL is null) AND (CADD >= 20 OR IMPACT >= MOD)  
+Result: Only variant 2 will be displayed.
 
 
 ### Filter
