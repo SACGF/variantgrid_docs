@@ -135,16 +135,15 @@ To enable any of the pre-set filters, click the left checkbox then move the slid
 
 #### AVAILBLE FILTERS
 
-**Impact min**  
-Allow variants with an impact greater or equal to the selected impact level. Impact levels are ordered as follows: MODIFIER < LOW < MODERATE < HIGH  
+**Impact min** 
+Allow variants with an impact greater or equal to the selected [impact level](https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html). Impact levels are ordered as follows: MODIFIER < LOW < MODERATE < HIGH  
 For example, impact min = LOW will display variants with IMPACT = LOW or MODERATE or HIGH
 
-The MODERATE* filter is a special case developed to exclude missense variants. The MODERATE* filter was designed so that curators can quickly remove tolerated/benign missense variants. **It is recommended to always use the MODERATE* option in combination with one or more of the REVEL, CADD or Damage Predictor options to control which missense variants will be displayed.** Specifically MODERATE* will display variants as follows:
+The MODERATE\* filter is a special case developed to exclude missense variants. The MODERATE\* filter was designed so that curators can quickly remove tolerated/benign missense variants. **It is recommended to always use the MODERATE\* option in combination with one or more of the REVEL, CADD or Damage Predictor options to control which missense variants will be displayed.** Specifically MODERATE\* will display variants as follows:
 * Any variants with IMPACT = HIGH  plus
 * Any variants with IMPACT = MODERATE and VARIANT CLASS != SNV
 
-As an example, test filtering your dataset using only the MODERATE option. You will see that all missense variants are displayed (along with MODERATE indels/substitutions and all HIGH impact variants). Many of the missense variants have low pathogenicity predictions and no other data to indicate they are deleterious. These variants are normally discarded by curators upon review. To speed up this process, now trying filtering your dataset using the MODERATE* option + REVEL min = 0.7. Now you will see that the only missense variants displayed are those with REVEL scores greater or equal to 0.7. These are your missense variants of interest. Because you've chosen the MODERATE* filter you'll still see indels/substitutions with MODERATE impact along with all HIGH impact variants. 
-
+As an example, test filtering your dataset using only the MODERATE option. You will see that all missense variants are displayed (along with MODERATE indels/substitutions and all HIGH impact variants). Many of the missense variants have low pathogenicity predictions and no other data to indicate they are deleterious. These variants are normally discarded by curators upon review. To speed up this process, now trying filtering your dataset using the MODERATE\* option + REVEL min = 0.7. Now you will see that the only missense variants displayed are those with REVEL scores greater or equal to 0.7. These are your missense variants of interest. Because you've chosen the MODERATE\* filter you'll still see indels/substitutions with MODERATE impact along with all HIGH impact variants.
 
 **Splice min**  
 Variants meeting the following criteria will be displayed:  
