@@ -174,25 +174,28 @@ COSMIC count >= T
 **Damage predictions min**  
 sum(pathogenic predictions for variant) >= T
 
-A prediction is considered pathogenic if it meets the following criteria:
-* SIFT = damaging
-* Polyphen2 = possibly or probably damaging
-* Mutation assessor = medium or high
-* Mutation taster = disease causing
-* Fathmm = damaging
+A prediction is considered pathogenic if it meets the following criteria:  
+
+  * SIFT = damaging
+  * Polyphen2 = possibly or probably damaging
+  * Mutation assessor = medium or high
+  * Mutation taster = disease causing
+  * Fathmm = damaging
 
 **Protein domain**  
-If selected, this will display variants with values in at least one of the following fields:
-* Interpro_domains
-* domains
+If selected, this will display variants with values in at least one of the following fields:  
+
+  * Interpro_domains
+  * domains
 
 **Published**  
-If selected, this will display variants with values in at least one of the following fields:
-* Pubmed
-* MM variant article count
-* MM variant/protein article count
-* MM aa article count
-* MM AA ID 
+If selected, this will display variants with values in at least one of the following fields:  
+
+  * Pubmed
+  * MM variant article count
+  * MM variant/protein article count
+  * MM aa article count
+  * MM AA ID 
 
 
 #### FILTERING EXAMPLES
@@ -277,6 +280,8 @@ Filter on population frequencies in public databases (gnomAD/Exac/1KG/UK10K) or 
 ![](images/nodes/node_tags.png "Tags")
 
 Filter variants to those that have been [tagged](tagging.md)
+
+
 
 ### Tissue Expression
 
