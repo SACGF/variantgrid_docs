@@ -127,7 +127,7 @@ The built in filter allows selection of commonly used variant classes including 
 
 ### Effect
 
-![](images/nodes/node_damage.png "Damage")
+![](images/nodes/node_effect_splicing.png "Effect")
 
 The effect node allows for quick filtering of variants based on a combination of predictions and information sets. 
 
