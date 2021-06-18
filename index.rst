@@ -48,6 +48,7 @@ This documentation is intended for users. There are also `Admin docs <https://va
    data/vcf_samples
    data/relatedness
    data/search
+   data/zygosity_counts
 
 .. toctree::
    :maxdepth: 2
@@ -74,6 +75,7 @@ This documentation is intended for users. There are also `Admin docs <https://va
    patients/phenotypes
    patients/cohorts
    patients/trios
+   patients/pedigree
 
 .. toctree::
    :maxdepth: 2

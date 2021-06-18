@@ -13,10 +13,4 @@ In the example report below, the top graph indicates the percent composition of 
 
 ![](images/mut_signature.png)
 
-
-
-
-
-
-
 Thanks to Paul Wang from the ACRF Cancer Genomics Facility for the code. 
