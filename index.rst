@@ -6,9 +6,9 @@
 VariantGrid Docs
 ================
 
-[VariantGrid](https://variantgrid.com) is an [source available](https://github.com/SACGF/variantgrid) variant database and web application for analyzing genetic data.
+`VariantGrid <https://variantgrid.com>`_ is a `source available <https://github.com/SACGF/variantgrid>`_ variant database and web application for analyzing genetic data.
 
-This documentation is intended for users. There are also [Admin docs](https://variantgrid-admin-docs.readthedocs.io) and [Developers Technical Wiki](https://github.com/SACGF/variantgrid/wiki)
+This documentation is intended for users. There are also `Admin docs <https://variantgrid-admin-docs.readthedocs.io>`_ and `Developers Technical Wiki <https://github.com/SACGF/variantgrid/wiki>`_
 
 .. toctree::
    :maxdepth: 2
