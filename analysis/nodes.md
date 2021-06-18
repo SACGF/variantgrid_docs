@@ -10,11 +10,13 @@ The following sections provide details of each of the different source nodes and
 
 ![](images/nodes/node_all_variants.png "All Variants")
 
-This node will add all variants available in the VariantGrid database at the time the node is added. Only variants from data and samples for which you have permission will be displayed. These variants can be filtered by gene and zygosity as required. The default filter is to require a minimum of 1 zygosity call as this removes variants with unknown zygosity or variants that are not associated with samples in the database. 
+Retrieves all variants in the database. This can be restricted to a gene, or by zygosity.
 
-By default only variant calls are displayed (e.g. hom_alt, het). To see reference calls (hom_ref), check the 'Show Reference Variants', but be aware that this will dramatically increase the size of the data set. In general, reference calls are only available from multi-sample vcfs. 
+Default is to show variants with a minimum of 1 of "any zygosity" (ie HET/HOM ALT) as this removes variants with unknown zygosity or variants that are not associated with samples in the database (eg from ClinVar) 
 
-The All Variants node reflects the variants in the database at a point in time. To update the node to reflect the current database state, simply re-click the 'Save' button at the bottom of the All Variants node settings. All child nodes will be automatically recalculated to reflect the change.
+To see all variants - "any zygosity" min to 0, but be aware that this will dramatically increase the results returned. Reference variants come from HOM_REF calls matching sample HET calls, low frequency somatic calls or multi-sample germline VCFs. 
+
+The node returns variants at the time it was saved (this "Last saved" date in the editor). Variants are constantly added to the system, clicking save may return more results than last time.  
 
 ### Cohort
 
@@ -42,12 +44,11 @@ The 'other' checkbox includes the following: artefacts, drug response or risk fa
 
 If a variant has been classified multiple times with differing clinical significance it will be shown if any of the classifications match the selected clinical significance. For example, let's say the ASLX1 variant X has been classified as both an artefact and likely pathogenic (this situation may occur if a truly pathogenic variant can't be reliably sequenced on a specific platform, e.g. amplicon v capture).  In this case Variant X will be displayed if either of the artefact or likely pathogenic tickboxes are selected.
 
-
 ### Pedigree
 
 ![](images/nodes/node_pedigree.png "Pedigree")
 
-Variants from family samples filtered by genotype according to inheritance models.
+Variants from a [Pedigree](../patients/pedigree.md), filtered by genotype according to AR and AD inheritance models.
 
 ### Sample
 
@@ -56,7 +57,6 @@ Variants from family samples filtered by genotype according to inheritance model
 This node will load all variants present in a sample (equivalent to a single column in a vcf). A sample is usually one genotype (patient, cell or organism) with a set of variants.
 
 This node is particularly useful for singleton analyses. Similar to the cohort node, a sample node can be filtered by variant parameters AD,DP,GQ,PL or AF (if available in the vcf), and also the variant zygosity. Before filtering by variant parameters make sure that they have been provided in the vcf otherwise no variants will be shown! 
-
 
 
 ### Trio
@@ -95,7 +95,6 @@ Compound HET
 
 
 If "require parent zygosity" is False - parent zygosities may be "Unknown". Selecting this option will allow variants with low or no coverage in parental samples to pass the zygosity filters. Note that if the samples have not been joint-called this may also allow parental reference calls through due to missing data. 
-
 
 
 ## Filter Nodes
@@ -232,7 +231,9 @@ Result: Only variant 2 will be displayed.
 
 ![](images/nodes/node_filter.png "Filter")
 
-Filter based on column values
+Construct your own filter based on column values. "All" means all lines must be met (AND), "Any" means any can be met (OR)
+
+Search is case insensitive (except "in"). Some columns contain NULL (no value) which will not match anything. You may want to use "is null" to include or "is not null" to exclude them.
 
 ### Gene List
 
@@ -246,14 +247,17 @@ Used **Named Gene Lists** to select existing [Gene Lists](../genes/gene_lists.md
 
 This node returns variants where ANY TRANSCRIPT matches the genes in the list, see [transcript choice](../annotation/transcript_choice.md)
 
-View the "Genes" tab to see which genes are being used by the filter.
-  
+**Custom Gene List** - Enter symbols directly, without having to create a gene list first.
 
+**PanelApp Panels** - Displays a list of panels from Australia/England PanelApp which you can auto-complete to select.
+
+View the "Genes" tab to see which genes are being used by the filter.
+ 
 ### Intervals Intersection
 
 ![](images/nodes/node_intervals_intersection.png "Intervals Intersection")
 
-Filter based on intersection with genomic ranges (eg .bed files)
+Filter based on intersection with genomic ranges (eg .bed files), a custom range (chrom: start-end) or a HGVS coordinate.
 
 ### Merge
 
@@ -265,39 +269,51 @@ Merge variants from multiple sources
 
 ![](images/nodes/node_phenotype.png "Phenotype")
 
-Filter to gene lists based on ontology keywords
+Filter to gene lists based on ontology keywords (HPO and OMIM).
+
+You can autocomplete terms (multiple select) for exploratory analysis, however it is far better to actually [store the phenotypes against the patient](../patients/phenotypes.md). 
+ 
+You can then select a patient to use those phenotypes (the patient must be assigned to a sample that is an ancestor to the pheno node)
+
+View the "Genes" tab to see which genes are being used by the filter.
 
 ### Population
 
 ![](images/nodes/node_population.png "Population")
 
-Filter on population frequencies in public databases (gnomAD/Exac/1KG/UK10K) or number of samples in this database.
+Filter on population frequencies in public databases (gnomAD/TopMed/1KG/UK10K) or number of samples in this database (the "database HOM count" and "database HET count" columns)
 
-![](images/node_editors/population_node_gnomad_population.png)
+Click "Pick individual gnomAD populations" to expand the selection to sub-populations. You may want to do this as PopMax includes populations with low numbers (eg Finnish/Ashkenazi)  
+
+You can also restrict to a max count (gnomAD hom alt or internal zygosity counts) which is useful to restrict to very rare variants (eg denovo) 
+
+![](images/node_editors/population_node_editor.png)
+
+Internal database frequency thresholds are critically dependent on what samples are in your database, most clinical databases will be highly enriched for disease samples. If you have entered [patient phenotypes](../patients/phenotypes.md) you can see counts of disease terms on the patient page.   
 
 ### Tags
 
 ![](images/nodes/node_tags.png "Tags")
 
-Filter variants to those that have been [tagged](tagging.md)
+Filter variants to those that have been [tagged](tagging.md). You can select multiple tags in the auto-complete. If no tag is selected, it filters to any tag.
 
+**Tags From** determines whether to filter to variants tagged just in this analysis ("Tags" column), or anywhere (both "Tags" and "Tags in other analyses" columns) 
 
+**Parent Input** - When set, the node has a top connector and filters the parent node's variants. If not set, the node is a source node and retrieves all tags.
 
-### Tissue Expression
+The **Exclude** option removes variants with tags - this is most often used for filtering out artefacts (All tags).
 
-![](images/nodes/node_tissue.png "Tissue Expression")
-
-Filter based on tissue specific expression (from Human Protein Atlas)
+The tags icon on the toolbar allows you to quickly see all tags in this analysis, without having to make and configure a tag node. 
 
 ### Venn
 
 ![](images/nodes/node_venn.png "Venn")
 
-A filter based on set intersections between parent nodes
+A filter based on set intersections between 2 parent nodes
 
 ### Zygosity
 
 ![](images/nodes/node_zygosity.png "Zygosity")
 
-Compound HET and other Zygosity filters
+Filter to an ancestor sample's zygosity. Multiple hit filters to >=2 hits in a gene, regardless of zygosity.
 
