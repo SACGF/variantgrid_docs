@@ -132,7 +132,7 @@ The effect node allows for quick filtering of variants based on a combination of
 
 To enable any of the pre-set filters, click the left checkbox then move the slider to select variants meeting or exceeding the set threshold (T). By default, if multiple filters are selected variants will be shown that meet **ANY** of the of the criteria. It is recommended to **ALWAYS** include IMPACT min = HIGH in a basic filter set as this will prevent inadvert loss of loss of function variants (frameshift/splice donor/start loss/stop gain etc.) that lack prediction data.
 
-#### AVAILBLE FILTERS
+#### AVAILABLE FILTERS
 
 **Impact min** 
 Allow variants with an impact greater or equal to the selected [impact level](https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html). Impact levels are ordered as follows: MODIFIER < LOW < MODERATE < HIGH  
@@ -265,11 +265,21 @@ Filter based on intersection with genomic ranges (eg .bed files), a custom range
 
 Merge variants from multiple sources
 
+### Mode of Inheritance
+
+![](images/nodes/node_moi.png "MOI")
+
+Uses known gene/disease associations from the [Gene Curation Coalition (GenCC)](https://thegencc.org)
+
+Disease ontology terms must be in [MONDO](https://mondo.monarchinitiative.org/) as that is what is used by GenCC
+
+If a sample is provided, with the "strict zygosity" option, that sample's zygosity will also be taken into account. For instance if a gene/disease mode of inheritance is "Autosomal recessive" then only homozygous variants in that gene will be included.
+
 ### Phenotype
 
 ![](images/nodes/node_phenotype.png "Phenotype")
 
-Filter to gene lists based on ontology keywords (HPO and OMIM).
+Filter to genes related ontology keywords (HPO, OMIM and MONDO). This is more lax than the Mode of Inheritance filter, as there are genes associated to a term but not definitively classified as disease causing.
 
 You can autocomplete terms (multiple select) for exploratory analysis, however it is far better to actually [store the phenotypes against the patient](../patients/phenotypes.md). 
  
