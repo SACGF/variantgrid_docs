@@ -24,3 +24,10 @@ Gold runs for an enrichment kit are used:
 ## Finding sequencing data
 
 Sequencing Runs are found by searching for the file 'RTAComplete.txt' on the server disks. You can ignore flow cells by putting a file ".variantgrid_skip_flowcell" in the directory. 
+
+## Triggering a manual scan
+
+Administrators, or users who have been give the permission "SeqAuto scan initiate" can 
+
+Menu: **[sequencing]**, then **manage disk scans** link, then click the button **Scan Disk for Sequencing Data**
+
