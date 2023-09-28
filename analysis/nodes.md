@@ -27,13 +27,27 @@ Used to add a collection of related samples, eg "control group" or "poor respond
 VariantGrid will automatically generate a cohort for each vcf upon upload. This cohort will contain all samples in the vcf. All other cohorts need to be defined manually by the user. Once defined, a cohort will be available for selection in the dropdown menu on the cohort node. It is recommended, though not essential, that samples to be analysed as a cohort are joint-called in the same vcf where possible. 
 
 There are two main approaches available to filter variants within a cohort:
-1. **Parameter Filtering:** Filtering based on any combination of the variant parameters AD,DP,GQ,PL or AF. Parameter filtering will be applied to all samples in the cohort. Note that not all vcfs will contain values for these parameters. Missing values will result in variants being inadvertently filtered from the cohort, so check your samples carefully before applying these filters. 
-2. **Zygosity filtering:** There are 3 methods for filtering cohorts by zygosity: zygosity counts, simple zygosity or sample zygosity. The selected method is the method that is expanded after the node filters have been saved. 
+
+**Parameter Filtering:** Filtering based on any combination of the variant parameters AD,DP,GQ,PL or AF. 
+
+![](images/node_editors/cohort_editor1.png)
+
+After each parameter is All/Any - this sets whether the parameter must be at least 1 sample or all of them. 
+
+Note that not all vcfs will contain values for these parameters. Missing values will result in variants being inadvertently filtered from the cohort, so check your samples carefully before applying these filters.
+
+**Zygosity filtering:** There are 3 methods for filtering cohorts by zygosity: zygosity counts, simple zygosity or sample zygosity. The selected method is the method that is expanded after the node filters have been saved. 
 
 Parameter and zygosity filtering can be applied together, however, only one zygosity filter type (count, simple or sample) can be applied at any one time. 
 By default cohorts are filtered using only the simple zygosity method: Het or Hom_Alt for ALL samples. 
 
+**Zygosity Counts**
 
+![](images/node_editors/cohort_editor_counts.png)
+
+"Any Zygosity" = Hom/Het/Ref (ie anything other than 'unknown'). Unknown zygosity is when there is no coverage over the variant for this sample.
+
+These counts are applied simultaneously, so be careful the ref/het/hom alt minimums don't add up to more than the number of samples in the cohort.
 ### Classifications
 
 ![](images/nodes/node_classifications.png "Classifications")
@@ -48,7 +62,10 @@ If a variant has been classified multiple times with differing clinical signific
 
 ![](images/nodes/node_pedigree.png "Pedigree")
 
-Variants from a [Pedigree](../patients/pedigree.md), filtered by genotype according to AR and AD inheritance models.
+Variants from a [Pedigree](../patients/pedigree.md), filtered by genotype according to Autosomal Recessive and Autosomal Dominant inheritance models.
+
+**Autosomal Recessive:** Affected=HOM_ALT, Unaffected=HET
+**Autosomal Dominant:** Affected=HET or HOM_ALT, Unaffected=HOM_REF
 
 ### Sample
 

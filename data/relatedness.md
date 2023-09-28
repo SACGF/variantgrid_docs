@@ -1,14 +1,14 @@
 # Relatedness
 
-Relatedness and ancestry is calculated using [Somalier](https://github.com/brentp/somalier) by Brent Pedersen + team from the Quinlan Lab, University of Utah ([Paper](https://doi.org/10.1186/s13073-020-00761-2))
+Relatedness and ancestry is calculated using [Somalier](https://github.com/brentp/somalier) by Brent Pedersen + team, for more information on details, please [read the paper](https://doi.org/10.1186/s13073-020-00761-2)
 
-When a VCF is first uploaded, Somalier records each sample's genotype calls at ~18k unlinked coding sequence sites with ~0.5 allele frequency. 
+When a VCF is first uploaded, Somalier records each sample's genotype calls at ~18k coding sequence sites (sites have independent genetic linkage and approx 0.5 allele frequency in gnomAD)
 
 With every new VCF uploaded, Somalier compare all samples against each other to generate pair-wise [relatedness cooefficient](https://en.wikipedia.org/wiki/Coefficient_of_relationship) scores.
 
 ### VCF relatedness
 
-Somalier generates a relatedness report which can be viewed in the **relate** tab on the VCF page ([example report](https://brentp.github.io/somalier/ex.html))
+ [Somalier](https://github.com/brentp/somalier) generates a relatedness report which can be viewed in the **relate** tab on the VCF page ([example report](https://brentp.github.io/somalier/ex.html))
 
 This shows a graph of samples relationships in the VCF. Sample to sample relatedness (ISBO vs ISB2) is plotted on the left. Related samples will locate in the top left and unrelated samples in the bottom right of the graph. Hover over a datapoint to see details of the pair-wise comparison.  The Sample Depth Metrics plot on the right is used to display QC results. 4 commonly used visualisations are provided as quicklinks at the bottom of the graphs. 
 
@@ -46,11 +46,11 @@ Interpreting relatedness:
 
 # Ancestry
 
-Somalier creates an ancestry report which can be viewed on the **ancestry** tab of the VCF page [example report](https://brentp.github.io/somalier/ex.somalier-ancestry.html)). This feature is currently "experimental"
+ [Somalier](https://github.com/brentp/somalier) creates an ancestry report which can be viewed on the **ancestry** tab of the VCF page [example report](https://brentp.github.io/somalier/ex.somalier-ancestry.html)). This feature is currently "experimental"
 
 Samples are displayed on a PCA plot with individuals from the 1000 genomes project, which have labelled ancestries.
 
-Somalier makes an ancestry prediction by comparing a sample with clusters from data with labelled ancestries.
+ [Somalier](https://github.com/brentp/somalier) makes an ancestry prediction by comparing a sample with clusters from data with labelled ancestries.
 
 The reported ancestry on the samples grid is the primary one and does not include admixture. A full breakdown of scores for all population groups can be found on the **ancestry** tab on the view sample page.
 

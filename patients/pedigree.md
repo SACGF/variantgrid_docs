@@ -2,7 +2,9 @@
 
 Menu: **[patient] -> [pedigree]**
 
-Pedigrees describe family relationships, and can be used to filter for inheritance models (eg recessive/dominant).
+Pedigrees describe family relationships, and marks samples as "affected/unaffected"
+
+This and can be used to filter for inheritance models (eg recessive/dominant) in an analyis.
 
 For the common case of 3 samples, perhaps use a [Trio](trios.md)
 
