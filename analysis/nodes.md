@@ -65,7 +65,7 @@ If a variant has been classified multiple times with differing clinical signific
 Variants from a [Pedigree](../patients/pedigree.md), filtered by genotype according to Autosomal Recessive and Autosomal Dominant inheritance models.
 
 **Autosomal Recessive:** Affected=HOM_ALT, Unaffected=HET
-**Autosomal Dominant:** Affected=HET or HOM_ALT, Unaffected=HOM_REF
+**Autosomal Dominant:** Affected=HET or HOM_ALT
 
 ### Sample
 
