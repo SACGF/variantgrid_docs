@@ -4,7 +4,7 @@ Gene Coverage refers to how well a gene was covered by high throughput sequencin
 
 Having gene coverage associated with a VCF sample allows you to be warned in an [analysis](../analysis/analysis_intro.md) when a gene in a gene list is below a threshold (default: 20x) and you may be missing some variants. The node will flash yellow, and the "genes" tab will be highlighted yellow so you can view which genes have low coverage.
 
-Boxplots of sample coverage for genes are on the [gene symbol page](gene_symbol.md)
+Where gene coverage has been uploaded (eg on diagnostic systems where QC is automatically uploaded) box-plots of sample coverage for a gene will be shown on the [gene symbol page](gene_symbol.md)
 
 ## Canonical Transcripts
 

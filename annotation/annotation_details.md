@@ -16,9 +16,7 @@ Annotation is shown on the [variant details](variant_details.md) page, and in an
 
 The first time we see a variant, it is annotated by Ensembl [Variant Effect Predictor](https://ensembl.org/info/docs/tools/vep/index.html) (VEP) and then cached in the database. 
 
-To see the VEP fields used, check the "Show Ensembl Variant Effect Predictor source fields" checkbox on the annotation descriptions (**[annotation] -> [descriptions]**) page.  
-
-VEP calculates the effects for each transcripts overlapping a variant, then picks a [representative transcript](transcript_choice.md) - this is what is used for filtering in an [analysis](../analysis/analysis_intro.md) and shown in the grid. 
+VEP calculates the effects for each transcript overlapping a variant, then picks a [representative transcript](transcript_choice.md) - this is what is used for filtering in an [analysis](../analysis/analysis_intro.md) and shown in the grid. 
 
 ## Annotation Versions
 

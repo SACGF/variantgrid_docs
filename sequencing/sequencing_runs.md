@@ -1,6 +1,8 @@
 # Sequencing Runs
 
-When VariantGrid has access to a network drive (eg a diagnostic lab intranet) it can scan disks for sequencing runs to collect QC metrics, gene coverage and automatically load VCFs.
+**Note:** This feature may not be enabled on all systems as it requires access to a network drive (eg a diagnostic lab intranet)
+
+VariantGrid can be setup to automatically scan network disks for sequencing runs to collect QC metrics, gene coverage and automatically load VCFs.
 
 ![Sequencing Samples over time](images/sequencing_samples.png)
 
@@ -9,6 +11,14 @@ When VariantGrid has access to a network drive (eg a diagnostic lab intranet) it
 ![A Sequencing Run](images/sequencing_run_qc.png)
 
 We collect Sequencing QC metrics and display them with interactive graphs. Collecting data over time allows us to see how this run compares to other runs over time (or vs _gold standard runs_).
+
+## Enrichment Kit
+
+An EnrichmentKit is a lab method to enrich a sample for the DNA regions you are interested in. For instance an exome or custom gene capture kit, or amplicons.
+
+You can set a bed file, a gene list and [canonical transcript collection](../genes/gene_coverage.html#canonical-transcripts)
+
+See [VariantGrid Admin docs](https://variantgrid-admin-docs.readthedocs.io/en/latest/sequencing/enrichment_kits.html) for more information.
 
 ## Gold Standard Runs
 

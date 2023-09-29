@@ -84,7 +84,9 @@ This node adds all variants present in a trio of samples. Trios need to be defin
 
 Each trio node requires an inheritance mode to be selected. This selection will then filter the variants according to the zygosities as listed in the table below. Only one inheritance mode can be selected per trio node. To assess multiple different modes of inheritance add multiple trio nodes to the analysis workspace. Use the default trio analysis template to quickly construct a trio analysis. 
 
-Required zygosity calls for each mode of inheritance in the trio node: 
+If "require parent zygosity" is False - parent zygosities may be "Unknown". Selecting this option will allow variants with low or no coverage in parental samples to pass the zygosity filters. Note that if the samples have not been joint-called this may also allow parental reference calls through due to missing data. 
+
+Below is the table is "require parent zygosity" is True:
 
 |                    | Proband      | Mother       | Father       |
 |--------------------| ------------ | ------------ | ------------:|
@@ -109,9 +111,6 @@ Compound HET
 | Het from mother    | HET          | HET          | REF          |
 | Het from father    | HET          | REF          | HET          |
 
-
-
-If "require parent zygosity" is False - parent zygosities may be "Unknown". Selecting this option will allow variants with low or no coverage in parental samples to pass the zygosity filters. Note that if the samples have not been joint-called this may also allow parental reference calls through due to missing data. 
 
 
 ## Filter Nodes
@@ -308,11 +307,13 @@ View the "Genes" tab to see which genes are being used by the filter.
 
 ![](images/nodes/node_population.png "Population")
 
-Filter on population frequencies in public databases (gnomAD/TopMed/1KG/UK10K) or number of samples in this database (the "database HOM count" and "database HET count" columns)
+Most genetic diseases are rare (eg 1 in 10,000 people) so we know the disease-causing variant must also be rare. So when searching for disease causing variants, one of the first things to do is filter out variants that are common in the population.
 
-Click "Pick individual gnomAD populations" to expand the selection to sub-populations. You may want to do this as PopMax includes populations with low numbers (eg Finnish/Ashkenazi)  
+This node filters variants by population frequency in public databases ([gnomAD](https://gnomad.broadinstitute.org/)/[TopMed](https://topmed.nhlbi.nih.gov/)/[1KG](https://www.internationalgenome.org/1000-genomes-summary/)/[UK10K](https://www.uk10k.org/)) or [internal frequency in this database](../data/zygosity_counts.md).
 
-You can also restrict to a max count (gnomAD hom alt or internal zygosity counts) which is useful to restrict to very rare variants (eg denovo) 
+Click "Pick individual gnomAD populations" to expand the selection to sub-populations (ancestry groups such as Europeans or East Asians). You may want to do this as PopMax includes populations with low numbers (eg Finnish/Ashkenazi)  
+
+You can also restrict to a max count (gnomAD hom alt or [internal zygosity counts]((../data/zygosity_counts.md))) which is useful to restrict to very rare variants (eg denovo) 
 
 ![](images/node_editors/population_node_editor.png)
 
@@ -342,5 +343,4 @@ A filter based on set intersections between 2 parent nodes
 
 ![](images/nodes/node_zygosity.png "Zygosity")
 
-Filter to an ancestor sample's zygosity. Multiple hit filters to >=2 hits in a gene, regardless of zygosity.
-
+Filter to an ancestor sample's zygosity. Multiple hit filters to variants where a minimum of 2 are present per gene.

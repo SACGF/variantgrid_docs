@@ -4,6 +4,8 @@
 
 We handle the simpler case of a [Trio](../patients/trios.md) with an affected child (ie proband/mother/father).
 
+"In phase" implies that the allele from a parent is the same as that in the affected child
+
 Variants are assigned to the following bins 
 
 F1ALT: Paternally inherited, in phase with affected child, ALT variant.

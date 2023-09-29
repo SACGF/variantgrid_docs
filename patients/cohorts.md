@@ -26,8 +26,8 @@ Use the Cohort Node to filter by counts within the cohort (eg in 7 out of 8 of t
 
 Quickly create an analysis using the cohort by clicking "Create new analysis for cohort" on the details tab of the cohort page.
 
-There are some other analyses you can perform from the cohort/VCF page, eg:
+There are some other analyses you can perform by clicking links at the bottom "Analysis" section of the cohort/VCF page, eg:
 
-![Gene/Sample Matrix](images/cohort_matrix.png)
+![Gene/Sample Matrix](images/cohort_matrix.png) - access by clicking "View gene damage counts for this cohort"
 
-![Cohort Hotspots graph](images/cohort_hotspots.png)
+![Cohort Hotspots graph](images/cohort_hotspots.png) - access by clicking "View gene hotspots for this cohort"

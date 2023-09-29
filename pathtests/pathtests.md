@@ -1,5 +1,7 @@
 # Pathology Tests
 
+**Note:** This is a diagnostic specific feature which may not be enabled on all systems
+
 Menu: **[tests] -> [manage tests]**
 
 Pathology Tests are curated, versioned gene lists offered as a diagnostic test. There can be multiple versions of a test.
