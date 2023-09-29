@@ -14,7 +14,7 @@ To check this open preferences in the IGV menu: **[View] -> [Preferences] -> [Ad
 
 ### VariantGrid Configuration
 
-If the value of the IGV port is different from **60151** (default), you need to change the IGV Port option in your User Settings page.
+If the value of the IGV port is different from **60151** (default), you need to change the IGV Port option in your [User Settings page](user_settings.md).
 
 Clicking the IGV link (![IGV link](images/IGV_64.png)) will jump to the locus, and show BAM files associated with input samples (Sample or Cohort ancestors). These are the same samples that have their zygosities/allele depth shown on the grid.
 
