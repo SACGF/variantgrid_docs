@@ -45,7 +45,7 @@ The later settings can be used to overwrite the earlier ones if they don't like 
  * **Variant Link in Analysis Opens New Tab** - Whether left click by default opens up variant details in new window. Default is open where node editor is. You can always open in new window via right click then new window
  * **Tooltips** - Show/hide help popups on mouse hover
  * **Node Debug Tab** - If true, an extra tab appears in analysis node editor, with details about node settings + SQL query.
- * **Import Messages** - Get internal notification (message icon top left) when imports done (eg VCF finished processing and annotating)
+ * **Import Messages** - Get internal notification (message icon top left) when imports are done (eg VCF finished processing and annotating)
  * **IGV Port** - Port to connect to IGV on your machine, see [IGV Integration](igv_integration.md)
  * **Default Genome Build** - Used for search (jump to result if that is the only one for this build) and populating defaults everywhere
  * **TimeZone (for downloads)**  - Time/date used in classification download
