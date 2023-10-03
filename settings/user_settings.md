@@ -39,10 +39,10 @@ There are multiple levels of settings:
 The later settings can be used to overwrite the earlier ones if they don't like the defaults.
 
  * **Email Regular Updates** - Opt into email list (Only used for Shariant)
- * **Columns** - Default value to sort analysis grids (can be changed per analysis)
- * **Default Sort by Column** - Initial sort by column for analysis variant grid
+ * **Columns** - Default columns for analysis grids (can be changed per analysis)
+ * **Default Sort by Column** - Default value to sort analysis grids (can be changed per analysis)
  * **Tag colors** - Set of colors assigned to tags (modify/create these in 'Tag settings')
- * **Variant Link in Analysis Opens New Tab** - Whether left click by default opens up variant details in new window. Default is open where node editor is. You can always open in new window via right click then new window
+ * **Variant Link in Analysis Opens New Tab** - Whether left click by default opens up variant details in new tab. No is to open details in the node editor location. It's always possible to right click and select 'open in new tab'
  * **Tooltips** - Show/hide help popups on mouse hover
  * **Node Debug Tab** - If true, an extra tab appears in analysis node editor, with details about node settings + SQL query.
  * **Import Messages** - Get internal notification (message icon top left) when imports are done (eg VCF finished processing and annotating)
