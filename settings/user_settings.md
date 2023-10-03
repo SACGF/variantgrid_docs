@@ -25,7 +25,7 @@ This is just the initial setting, you can always click the "sharing/permissions"
 
 ## Node counts
 
-These are how the node counts are set when an analysis is created. You can always adjust each analyis's node counts via analysis settings.
+These are how the node counts are set when an analysis is created. You can always adjust each analysis node counts via analysis settings.
 
 ## User Settings
 
@@ -39,14 +39,14 @@ There are multiple levels of settings:
 The later settings can be used to overwrite the earlier ones if they don't like the defaults.
 
  * **Email Regular Updates** - Opt into email list (Only used for Shariant)
- * **Columns** - Initial custom columns when creating analysis
+ * **Columns** - Default value to sort analysis grids (can be changed per analysis)
  * **Default Sort by Column** - Initial sort by column for analysis variant grid
- * **Tag colors** - Custom tag colors used in analyis and variant grids
+ * **Tag colors** - Set of colors assigned to tags (modify/create these in 'Tag settings')
  * **Variant Link in Analysis Opens New Tab** - Whether left click by default opens up variant details in new window. Default is open where node editor is. You can always open in new window via right click then new window
  * **Tooltips** - Show/hide help popups on mouse hover
  * **Node Debug Tab** - If true, an extra tab appears in analysis node editor, with details about node settings + SQL query.
- * **Import Messages** - Get internal messages when imports done (eg VCF finished processing and annotating)
+ * **Import Messages** - Get internal notification (message icon top left) when imports done (eg VCF finished processing and annotating)
  * **IGV Port** - Port to connect to IGV on your machine, see [IGV Integration](igv_integration.md)
- * **Default Genome Build** - Used for search (jump if 1 result for this build) and populating defaults everywhere
+ * **Default Genome Build** - Used for search (jump to result if that is the only one for this build) and populating defaults everywhere
  * **TimeZone (for downloads)**  - Time/date used in classification download
  * **Default Lab** - Lab used for creating classifications (you can belong to more than 1 lab)

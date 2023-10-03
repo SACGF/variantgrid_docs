@@ -4,7 +4,7 @@ Menu: **[patient] -> [pedigree]**
 
 Pedigrees describe family relationships, and marks samples as "affected/unaffected"
 
-This and can be used to filter for inheritance models (eg recessive/dominant) in an analyis.
+This and can be used to filter for inheritance models (eg recessive/dominant) in an analysis.
 
 For the common case of 3 samples, perhaps use a [Trio](trios.md)
 
