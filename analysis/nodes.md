@@ -47,7 +47,8 @@ By default cohorts are filtered using only the simple zygosity method: Het or Ho
 
 "Any Zygosity" = Hom/Het/Ref (ie anything other than 'unknown'). Unknown zygosity is when there is no coverage over the variant for this sample.
 
-These counts are applied simultaneously, so be careful the ref/het/hom alt minimums don't add up to more than the number of samples in the cohort.
+These counts are applied together in an AND-like manner. Warning: It's possible to set ref/het/hom alt minimums that add up to more than the number of samples in the cohort, which will always be false, and so exclude all variants.
+
 ### Classifications
 
 ![](images/nodes/node_classifications.png "Classifications")
@@ -311,7 +312,9 @@ Most genetic diseases are rare (eg 1 in 10,000 people) so we know the disease-ca
 
 This node filters variants by population frequency in public databases ([gnomAD](https://gnomad.broadinstitute.org/)/[TopMed](https://topmed.nhlbi.nih.gov/)/[1KG](https://www.internationalgenome.org/1000-genomes-summary/)/[UK10K](https://www.uk10k.org/)) or [internal frequency in this database](../data/zygosity_counts.md).
 
-Click "Pick individual gnomAD populations" to expand the selection to sub-populations (ancestry groups such as Europeans or East Asians). You may want to do this as PopMax includes populations with low numbers (eg Finnish/Ashkenazi)  
+[PopMax](https://gnomad.broadinstitute.org/help/popmax) is the frequency of the highest sub-population (Note: gnomAD2 includes bottlenecked populations such as Finnish/Ashkenazi, while gnomADv3 excludes them)
+
+Click "Pick individual gnomAD populations" to expand the selection to sub-populations (ancestry groups such as Europeans or East Asians).
 
 You can also restrict to a max count (gnomAD hom alt or [internal zygosity counts]((../data/zygosity_counts.md))) which is useful to restrict to very rare variants (eg denovo) 
 
