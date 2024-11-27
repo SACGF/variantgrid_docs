@@ -49,6 +49,22 @@ By default cohorts are filtered using only the simple zygosity method: Het or Ho
 
 These counts are applied together in an AND-like manner. Warning: It's possible to set ref/het/hom alt minimums that add up to more than the number of samples in the cohort, which will always be false, and so exclude all variants.
 
+### Conservation
+
+![](images/nodes/conservation_node.png "Conservation Node")
+
+Filter by minimum conservation score. Higher scores indicate greater conservation and potential functional significance.
+
+This filters by the PhastCons (identifies conserved elements) and PhyloP (assesses conservation or acceleration at individual sites)
+
+These tools have different scores, but all typically have a somewhat normal distribution with thin tails. Filtering is typically done at the 85-95th percentile
+
+In the editor, there is a simplified slider **Any scaled min** which adjusts the percentiles of the different scores. Variants are kept if any score is above thresholds.
+
+You can click *show individual conservation scores* which will reveal the values being auto-set by the master slider. Ticking the box "use individual sliders" allows you to adjust them independently
+
+![](images/node_editors/conservation.png)
+
 ### Classifications
 
 ![](images/nodes/node_classifications.png "Classifications")
