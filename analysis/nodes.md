@@ -53,15 +53,14 @@ These counts are applied together in an AND-like manner. Warning: It's possible 
 
 ![](images/nodes/conservation_node.png "Conservation Node")
 
-Filter by minimum conservation score. Higher scores indicate greater conservation and potential functional significance.
+Filter by minimum conservation score. Higher scores indicate greater conservation and potential functional importance.
 
-This filters by the PhastCons (identifies conserved elements) and PhyloP (assesses conservation or acceleration at individual sites)
+This filter uses PhastCons (identifies conserved elements) and PhyloP (assesses conservation or acceleration at individual sites). While their scoring methods differ, both typically follow a somewhat normal distribution with thin tails. Filtering is usually applied at the 85th–95th percentile.
 
-These tools have different scores, but all typically have a somewhat normal distribution with thin tails. Filtering is typically done at the 85-95th percentile
+The **Any Scaled Min** slider simplifies this process by adjusting thresholds across scores. Variants are retained if any score exceeds the set thresholds.
 
-In the editor, there is a simplified slider **Any scaled min** which adjusts the percentiles of the different scores. Variants are kept if any score is above thresholds.
+To fine-tune, click *Show Individual Conservation Scores* to view auto-set values. Tick **Use Individual Sliders** to adjust thresholds independently.
 
-You can click *show individual conservation scores* which will reveal the values being auto-set by the master slider. Ticking the box "use individual sliders" allows you to adjust them independently
 
 ![](images/node_editors/conservation.png)
 
