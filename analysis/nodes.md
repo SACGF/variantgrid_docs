@@ -62,7 +62,7 @@ The **Any Scaled Min** slider simplifies this process by adjusting thresholds ac
 To fine-tune, click *Show Individual Conservation Scores* to view auto-set values. Tick **Use Individual Sliders** to adjust thresholds independently.
 
 
-![](images/node_editors/conservation.png)
+![](images/node_editors/conservation_editor.png)
 
 ### Classifications
 
